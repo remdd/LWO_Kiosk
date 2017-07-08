@@ -705,4 +705,12 @@ hr {
 	left: 0;
 	top: 500px;
 	width: 800px;
+} [data-slide-14] > div:nth-child(4) {
+	left: 100px;
+	top: 100px;
+	width: 1000px;
+} [data-slide-14] > div:nth-child(5) {
+	left: 100px;
+	top: 100px;
+	width: 1000px;
 }

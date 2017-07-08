@@ -3,7 +3,7 @@ $('document').ready(function() {
 	var slides = $('.slide').toArray();
 	var timeStops = $('.timeStop').toArray();
 
-	var slideNo = 0;		// holds number of slide to be displayed
+	var slideNo = 13;		// holds number of slide to be displayed
 	showSlide();
 	selectTimeStop();
 
@@ -98,7 +98,7 @@ $('document').ready(function() {
 	$('#popuplink-dinaspics').click(function(){
 		openModal();
 		$('#popup-dinaspics').removeClass('animated zoomOut activePopup');
-		$('#popup-dinaspics').addClass('animated fadeInDown activePopup');
+		$('#popup-dinaspics').addClass('animated zoomIn activePopup');
 	});
 	$('#dinasGalNextBtn').click(function(){
 		$("#popup-dinaspics > div.picGallery > div.gallerySlide").eq(dinasSlideNo).removeClass('activeGalSlide');
@@ -120,7 +120,7 @@ $('document').ready(function() {
 	$('#popuplink-plantlifepics').click(function(){
 		openModal();
 		$('#popup-plantlifepics').removeClass('animated zoomOut activePopup');
-		$('#popup-plantlifepics').addClass('animated fadeInDown activePopup');
+		$('#popup-plantlifepics').addClass('animated zoomIn activePopup');
 	});
 	$('#plantlifeGalNextBtn').click(function(){
 		$("#popup-plantlifepics > div.picGallery > div.gallerySlide").eq(plantlifeSlideNo).removeClass('activeGalSlide');
@@ -142,7 +142,7 @@ $('document').ready(function() {
 	$('#popupLink-firstLeaflet').click(function(){
 		openModal();
 		$('#popup-firstLeafletPics').removeClass('animated zoomOut activePopup');
-		$('#popup-firstLeafletPics').addClass('animated fadeInDown activePopup');
+		$('#popup-firstLeafletPics').addClass('animated zoomIn activePopup');
 	});
 	$('#firstLeafletGalFlipBtn').click(function(){
 		$("#popup-firstLeafletPics > div.picGallery > div.gallerySlide").eq(firstleafletSlideNo).removeClass('activeGalSlide');
@@ -168,31 +168,31 @@ $('document').ready(function() {
 	$('#popupLink-mara').click(function(){
 		openModal();
 		$('#popup-mara').removeClass('animated zoomOut activePopup');
-		$('#popup-mara').addClass('animated fadeInRight activePopup');
+		$('#popup-mara').addClass('animated zoomIn activePopup');
 	});
 
 	$('#popupLink-golden').click(function(){
 		openModal();
 		$('#popup-golden').removeClass('animated zoomOut activePopup');
-		$('#popup-golden').addClass('animated fadeInRight activePopup');
+		$('#popup-golden').addClass('animated zoomIn activePopup');
 	});
 
 	$('#popupLink-meerkatBabies').click(function(){
 		openModal();
 		$('#popup-meerkatBabies').removeClass('animated zoomOut activePopup');
-		$('#popup-meerkatBabies').addClass('animated fadeInRight activePopup');
+		$('#popup-meerkatBabies').addClass('animated zoomIn activePopup');
 	});
 
 	$('#popupLink-waldrapp').click(function(){
 		openModal();
 		$('#popup-waldrapp').removeClass('animated zoomOut activePopup');
-		$('#popup-waldrapp').addClass('animated fadeInRight activePopup');
+		$('#popup-waldrapp').addClass('animated zoomIn activePopup');
 	});
 
 	$('#popupLink-pigeon').click(function(){
 		openModal();
 		$('#popup-pigeon').removeClass('animated zoomOut activePopup');
-		$('#popup-pigeon').addClass('animated fadeInRight activePopup');
+		$('#popup-pigeon').addClass('animated zoomIn activePopup');
 	});
 
 	$('#popupLink-cafeClipping').click(function(){
@@ -234,7 +234,7 @@ $('document').ready(function() {
 	$('#popuplink-leopardOpening').click(function(){
 		openModal();
 		$('#popup-leopardOpening').removeClass('animated zoomOut activePopup');
-		$('#popup-leopardOpening').addClass('animated fadeInDown activePopup');
+		$('#popup-leopardOpening').addClass('animated zoomIn activePopup');
 	});
 	$('#leopardOpeningGalNextBtn').click(function(){
 		$("#popup-leopardOpening > div.picGallery > div.gallerySlide").eq(leopardOpeningSlideNo).removeClass('activeGalSlide');
@@ -262,7 +262,7 @@ $('document').ready(function() {
 	$('#popuplink-cubs').click(function(){
 		openModal();
 		$('#popup-cubs').removeClass('animated zoomOut activePopup');
-		$('#popup-cubs').addClass('animated fadeInDown activePopup');
+		$('#popup-cubs').addClass('animated zoomIn activePopup');
 	});
 	$('#cubsGalNextBtn').click(function(){
 		$("#popup-cubs > div.picGallery > div.gallerySlide").eq(cubsSlideNo).removeClass('activeGalSlide');
@@ -284,7 +284,7 @@ $('document').ready(function() {
 	$('#popuplink-floods').click(function(){
 		openModal();
 		$('#popup-floods').removeClass('animated zoomOut activePopup');
-		$('#popup-floods').addClass('animated fadeInDown activePopup');
+		$('#popup-floods').addClass('animated zoomIn activePopup');
 	});
 	$('#floodsGalNextBtn').click(function(){
 		$("#popup-floods > div.picGallery > div.gallerySlide").eq(floodsSlideNo).removeClass('activeGalSlide');
@@ -319,7 +319,7 @@ $('document').ready(function() {
 
 	// Generic close button listener
 	$('.closeBtn').click(function(){
-		$(this).parent().removeClass('animated zoomIn fadeInDown fadeInRight activePopup');
+		$(this).parent().removeClass('animated zoomIn activePopup');
 		$(this).parent().addClass('animated zoomOut');
 		closeModal();
 	})
