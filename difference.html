@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Spot the difference</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/difference.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/LWO_common.css">
+	<link href="https://fonts.googleapis.com/css?family=Pangolin" rel="stylesheet">
+	<script type="text/javascript" src="assets/lib/jQuery/jquery-3.2.1.js"></script>
+</head>
+<body>
+	<div class="backgroundDiv">
+		<div id="allPane">
+			<div class="mainMenuBtn"><a href="index.html" id="mainMenuBtnLink"><img src="assets/img/home-sketch.png" class="mainMenuBtnImg"><span class="mainMenuBtnText">Main Menu</span></a></div>
+			<div id="headerPane">
+				<h1>Can you find all of the differences?</h1>
+				<h3 id="caption1">&nbsp</h3>
+				<h3 id="caption2">&nbsp</h3>
+			</div>
+			<div id="mainPane">
+				<div class="imgPane" id="leftPane">
+					<img id="originalImg" src="">
+				</div>
+				<div class="imgPane" id="rightPane">
+					<svg id="rightSvg" class="shadow" width="760" height="760">
+						<ellipse id="diff0" class="hidden" cx="0" cy="0" rx="0" ry="0" />
+						<ellipse id="diff1" class="hidden" cx="0" cy="0" rx="0" ry="0" />
+						<ellipse id="diff2" class="hidden" cx="0" cy="0" rx="0" ry="0" />
+						<ellipse id="diff3" class="hidden" cx="0" cy="0" rx="0" ry="0" />
+						<ellipse id="diff4" class="hidden" cx="0" cy="0" rx="0" ry="0" />
+						<ellipse id="diff5" class="hidden" cx="0" cy="0" rx="0" ry="0" />
+						<ellipse id="diff6" class="hidden" cx="0" cy="0" rx="0" ry="0" />
+						<ellipse id="diff7" class="hidden" cx="0" cy="0" rx="0" ry="0" />
+						<ellipse id="diff8" class="hidden" cx="0" cy="0" rx="0" ry="0" />
+						<ellipse id="diff9" class="hidden" cx="0" cy="0" rx="0" ry="0" />
+					</svg>
+					<img id="editedImg" src="">
+				</div>
+			</div>
+			<div id="footerPane">
+				<h3>Differences still to find: 
+					<img id="paw9" class="cluePaw foundCluePaw" src="assets/img/difference/PawIcon.png">
+					<img id="paw8" class="cluePaw foundCluePaw" src="assets/img/difference/PawIcon.png">
+					<img id="paw7" class="cluePaw foundCluePaw" src="assets/img/difference/PawIcon.png">
+					<img id="paw6" class="cluePaw foundCluePaw" src="assets/img/difference/PawIcon.png">
+					<img id="paw5" class="cluePaw foundCluePaw" src="assets/img/difference/PawIcon.png">
+					<img id="paw4" class="cluePaw foundCluePaw" src="assets/img/difference/PawIcon.png">
+					<img id="paw3" class="cluePaw foundCluePaw" src="assets/img/difference/PawIcon.png">
+					<img id="paw2" class="cluePaw foundCluePaw" src="assets/img/difference/PawIcon.png">
+					<img id="paw1" class="cluePaw foundCluePaw" src="assets/img/difference/PawIcon.png">
+					<img id="paw0" class="cluePaw foundCluePaw" src="assets/img/difference/PawIcon.png">
+				</h3>
+			</div>
+
+			<div id="winModal" class="modal">
+				<!-- Modal content -->
+				<div class="modal-content">
+					<div class="modal-header">
+						<h2>Well done!</h2>
+						<h3>You found all of the differences in</h3>
+						<h3><span id="spanTime">blah</span></h3>
+					</div>
+					<div class="modal-content-box">
+						<p>Would you like to play again?</p>
+						<button id="newGameBtn" class="modal-btn flashBtn">New Picture</button>
+						<a href="index.html"><button id="lastGameFooterBtn" class="modal-btn flashBtn">Main Menu</button></a>
+					</div>
+				</div>
+			</div>
+
+			<div id="newGameModal" class="modal bigModal">
+				<!-- Modal content -->
+				<div class="modal-content bigModal-content">
+					<div class="modal-header">
+						<h2>How to play:</h2>
+						<br>
+						<h3>You will be shown two copies of the same picture - but the one on the right has been edited!</h3>
+						<h3>When you spot a difference between the two pictures, tap its location in the picture on the right.</h3>
+						<h3>Try to find all the differences as quickly as you can.</h3>
+						<br>
+						<h2>Choose a picture to start!</h2>
+					</div>
+					<div class="modal-content-box bigModal-content-box">
+						<button id="crownedcrane" class="modal-btn bigModal-btn"><img src="assets/img/difference/CrownedCraneSm.jpg"><p>Grey Crowned Crane</p></button>
+						<button id="woodnymph" class="modal-btn bigModal-btn"><img src="assets/img/difference/WoodNymphSm.jpg"><p>Giant Wood Nymph</p></button>
+						<button id="cockroaches" class="modal-btn bigModal-btn"><img src="assets/img/difference/CockroachesSm.jpg"><p>Hissing Cockroaches</p></button>
+						<button id="frogs" class="modal-btn bigModal-btn"><img src="assets/img/difference/FrogsSm.jpg"><p>Tree Frogs</p></button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+	</div>
+
+	<script type="text/javascript" src="assets/js/difference.js"></script>
+</body>
+</html>

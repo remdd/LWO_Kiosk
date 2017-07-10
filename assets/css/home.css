@@ -8,6 +8,9 @@
 	width: 40%;
 	float: left;
 	padding-top: 20px;
+} .leftDiv a {
+	color: black;
+	text-decoration: none;
 }
 
 /* Capsule buttons */
@@ -23,8 +26,6 @@
 	margin-bottom: 40px;
 	font-size: 1.5rem;
 	padding: 30px;
-} .capsuleBtn a {
-	color: inherit;
 } .capsuleBtnImg {
 	position: absolute;
 	left: -70px;
