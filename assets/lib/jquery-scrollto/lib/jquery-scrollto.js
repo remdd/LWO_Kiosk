@@ -62,7 +62,7 @@ umd: true
 			easing: 'swing',
 			callback: null,
 			durationMode: 'each',
-			offsetTop: 300,						/* Change to update vertical stop position of scrolled-to element */
+			offsetTop: 280,						/* Change to update vertical stop position of scrolled-to element */
 			offsetLeft: 0
 		},
 

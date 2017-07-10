@@ -1,9 +1,22 @@
 $('document').ready(function() {
 
+	$('body').fadeIn('slow');
+
+	$('#mainMenuBtnLink').click(function(event) {
+		event.preventDefault();
+		newLocation = this.href;
+		$('html').fadeOut('slow', newpage);
+	});
+
+	function newpage() {
+		window.location = newLocation;
+	}
+
+
 	var slides = $('.slide').toArray();
 	var timeStops = $('.timeStop').toArray();
 
-	var slideNo = 13;		// holds number of slide to be displayed
+	var slideNo = 0;		// holds number of slide to be displayed
 	showSlide();
 	selectTimeStop();
 

@@ -3,12 +3,15 @@ html {
 }
 body {
 	position: relative;
+}
+.backgroundDiv {
 	background: url('../img/LakesBG.jpg');
 }
 .allDiv {
 	width: 100%;
 	height: 1080px;
 	overflow: hidden;
+	position: relative;
 }
 p {
 	font-size: 1.25em;
@@ -17,7 +20,7 @@ figcaption {
 	padding-top: 15px;
 	font-size: 1.25em;
 }
-img {
+.allDiv img {
 	border: 3px solid black;
 	border-radius: 10px;
 	box-shadow: 5px 10px 20px 0px rgba(0,0,0,0.3);
@@ -71,10 +74,10 @@ hr {
 /* Timeline formatting */
 
 #timelineDiv {
-	height: 1000px;
+	height: 920px;
 	width: 250px;
 	margin: 20px;
-	padding-top: 20px;
+	margin-top: 120px;
 	padding-bottom: 20px;
 	overflow-y: none;
 	overflow-x: none;
@@ -120,6 +123,8 @@ hr {
 	font-size: 1.8em;
 	text-align: center;
 	padding: 0;
+	border-left: 2px solid black;
+	border-right: 2px solid black;
 } 
 .pointer {
 	width: 0;
@@ -134,12 +139,36 @@ hr {
 } 
 .upScrollBtn {
 	padding-bottom: 10px;
+	border-bottom: 2px solid black;
 }.downScrollBtn {
 	padding-top: 10px;
+	border-top: 2px solid black;
 }
 .timeBtn {
 	height: 100px;
 	width: 200px;
+}
+.arrowBorder {
+	width: 109px;
+	border: 1px solid black;
+	height: 0;
+	position: absolute;
+} #topLeftArrowBorder {
+	top: 25px;
+	left: 20px;
+	transform: rotate(-26.565deg);
+} #topRightArrowBorder {
+	top: 25px;
+	left: 119px;
+	transform: rotate(26.565deg);
+} #bottomLeftArrowBorder {
+	top: 895px;
+	left: 20px;
+	transform: rotate(26.565deg);
+} #bottomRightArrowBorder {
+	top: 895px;
+	left: 119px;
+	transform: rotate(-26.565deg);
 }
 #timeStamps {
 	width: 180px;
@@ -154,22 +183,23 @@ hr {
 	float: left;
 	overflow-y: hidden;
 	clear: both;
-	background: white;
+	background: rgba(255, 255, 255, 0.6);
 	position: relative;
+	border: 2px solid black;
 } #timeStampsObscurer {
 	position: absolute;
-	top: 130px;
+	top: 122px;
 	left: 25px;
 	z-index: 1;
 	width: 200px;
-	height: 770px;
+	height: 676px;
     background: -webkit-linear-gradient(
-        rgba(255, 255, 255, 1) 0%,
-        rgba(255, 255, 255, 1) 3%,
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(255, 255, 255, 0.95) 3%,
         rgba(255, 255, 255, 0) 10%,
         rgba(255, 255, 255, 0) 90%,
-        rgba(255, 255, 255, 1) 97%,
-        rgba(255, 255, 255, 1) 100%
+        rgba(255, 255, 255, 0.95) 97%,
+        rgba(255, 255, 255, 0.95) 100%
     ); 
 }
 .timeStamp {
@@ -272,19 +302,19 @@ hr {
 }
 
 .reveal {
-	animation: reveal 1s forwards;
+	animation: reveal 2s forwards;
 } .reveal1 {
 	animation-delay: 0s;
 } .reveal2 {
-	animation-delay: 1s;
-} .reveal3 {
 	animation-delay: 2s;
-} .reveal4 {
-	animation-delay: 3s;
-} .reveal5 {
+} .reveal3 {
 	animation-delay: 4s;
+} .reveal4 {
+	animation-delay: 6s;
+} .reveal5 {
+	animation-delay: 8s;
 } .reveal6 {
-	animation-delay: 5s;
+	animation-delay: 10s;
 }
 
 
@@ -377,10 +407,10 @@ hr {
 
 /*	Slide 1 	- "It all started in..."	*/
 [data-slide-1] > div:nth-child(1) {
-	left: 380px;
+	left: 500px;
 	top: 20px;
 } [data-slide-1] > div:nth-child(2) {
-	left: 200px;
+	left: 250px;
 	bottom: 0;
 	width: 900px;
 } [data-slide-1] figure {
@@ -460,10 +490,10 @@ hr {
 [data-slide-4] > div:nth-child(1) {
 	left: 400px;
 	top: 40px;
-	width: 600px;
+	width: 550px;
 } [data-slide-4] > div:nth-child(2) {
 	left: 20px;
-	top: 400px;
+	top: 300px;
 	width: 700px;
 } [data-slide-4] > div:nth-child(3) {
 	left: 900px;
