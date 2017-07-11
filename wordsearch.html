@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animal Search</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/LWO_common.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/wordsearch.css">
+	<link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Averia+Sans+Libre" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/lib/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/lib/animate.css">
+	<script type="text/javascript" src="assets/lib/jQuery/jquery-3.2.1.js"></script>
+</head>
+<body>
+	<div class="backgroundDiv">
+		
+		<div id="divAll">
+			<br>
+			&nbsp
+			<div id="leftDiv">
+				<div id="mainMenu"><a href="index.html"><img src="assets/img/home-sketch.png"><span> Main Menu</span></a></div>
+				<canvas id="leftCanvas" width="494" height="1000"></canvas>
+			</div>
+
+			<div id="mainDiv">
+				<h2>How many of the Lakeland Wildlife Oasis' inhabitants can you find?</h2>
+				<div id="gridDiv">
+					<canvas id="gridCanvas" width="812" height="812"></canvas>
+					<div class="row" data-rowno="0" id="firstRow">
+						<div class="square" data-row="0" data-col="0"></div>
+						<div class="square" data-row="0" data-col="1"></div>
+						<div class="square" data-row="0" data-col="2"></div>
+						<div class="square" data-row="0" data-col="3"></div>
+						<div class="square" data-row="0" data-col="4"></div>
+						<div class="square" data-row="0" data-col="5"></div>
+						<div class="square" data-row="0" data-col="6"></div>
+						<div class="square" data-row="0" data-col="7"></div>
+						<div class="square" data-row="0" data-col="8"></div>
+						<div class="square" data-row="0" data-col="9"></div>
+						<div class="square" data-row="0" data-col="10"></div>
+						<div class="square" data-row="0" data-col="11"></div>
+						<div class="square" data-row="0" data-col="12"></div>
+						<div class="square" data-row="0" data-col="13"></div>
+					</div>
+					<div class="row" data-rowno="1">
+						<div class="square" data-row="1" data-col="0"></div>
+						<div class="square" data-row="1" data-col="1"></div>
+						<div class="square" data-row="1" data-col="2"></div>
+						<div class="square" data-row="1" data-col="3"></div>
+						<div class="square" data-row="1" data-col="4"></div>
+						<div class="square" data-row="1" data-col="5"></div>
+						<div class="square" data-row="1" data-col="6"></div>
+						<div class="square" data-row="1" data-col="7"></div>
+						<div class="square" data-row="1" data-col="8"></div>
+						<div class="square" data-row="1" data-col="9"></div>
+						<div class="square" data-row="1" data-col="10"></div>
+						<div class="square" data-row="1" data-col="11"></div>
+						<div class="square" data-row="1" data-col="12"></div>
+						<div class="square" data-row="1" data-col="13"></div>
+					</div>
+					<div class="row" data-rowno="2">
+						<div class="square" data-row="2" data-col="0"></div>
+						<div class="square" data-row="2" data-col="1"></div>
+						<div class="square" data-row="2" data-col="2"></div>
+						<div class="square" data-row="2" data-col="3"></div>
+						<div class="square" data-row="2" data-col="4"></div>
+						<div class="square" data-row="2" data-col="5"></div>
+						<div class="square" data-row="2" data-col="6"></div>
+						<div class="square" data-row="2" data-col="7"></div>
+						<div class="square" data-row="2" data-col="8"></div>
+						<div class="square" data-row="2" data-col="9"></div>
+						<div class="square" data-row="2" data-col="10"></div>
+						<div class="square" data-row="2" data-col="11"></div>
+						<div class="square" data-row="2" data-col="12"></div>
+						<div class="square" data-row="2" data-col="13"></div>
+					</div>
+					<div class="row" data-rowno="3">
+						<div class="square" data-row="3" data-col="0"></div>
+						<div class="square" data-row="3" data-col="1"></div>
+						<div class="square" data-row="3" data-col="2"></div>
+						<div class="square" data-row="3" data-col="3"></div>
+						<div class="square" data-row="3" data-col="4"></div>
+						<div class="square" data-row="3" data-col="5"></div>
+						<div class="square" data-row="3" data-col="6"></div>
+						<div class="square" data-row="3" data-col="7"></div>
+						<div class="square" data-row="3" data-col="8"></div>
+						<div class="square" data-row="3" data-col="9"></div>
+						<div class="square" data-row="3" data-col="10"></div>
+						<div class="square" data-row="3" data-col="11"></div>
+						<div class="square" data-row="3" data-col="12"></div>
+						<div class="square" data-row="3" data-col="13"></div>
+					</div>
+					<div class="row" data-rowno="4">
+						<div class="square" data-row="4" data-col="0"></div>
+						<div class="square" data-row="4" data-col="1"></div>
+						<div class="square" data-row="4" data-col="2"></div>
+						<div class="square" data-row="4" data-col="3"></div>
+						<div class="square" data-row="4" data-col="4"></div>
+						<div class="square" data-row="4" data-col="5"></div>
+						<div class="square" data-row="4" data-col="6"></div>
+						<div class="square" data-row="4" data-col="7"></div>
+						<div class="square" data-row="4" data-col="8"></div>
+						<div class="square" data-row="4" data-col="9"></div>
+						<div class="square" data-row="4" data-col="10"></div>
+						<div class="square" data-row="4" data-col="11"></div>
+						<div class="square" data-row="4" data-col="12"></div>
+						<div class="square" data-row="4" data-col="13"></div>
+					</div>
+					<div class="row" data-rowno="5">
+						<div class="square" data-row="5" data-col="0"></div>
+						<div class="square" data-row="5" data-col="1"></div>
+						<div class="square" data-row="5" data-col="2"></div>
+						<div class="square" data-row="5" data-col="3"></div>
+						<div class="square" data-row="5" data-col="4"></div>
+						<div class="square" data-row="5" data-col="5"></div>
+						<div class="square" data-row="5" data-col="6"></div>
+						<div class="square" data-row="5" data-col="7"></div>
+						<div class="square" data-row="5" data-col="8"></div>
+						<div class="square" data-row="5" data-col="9"></div>
+						<div class="square" data-row="5" data-col="10"></div>
+						<div class="square" data-row="5" data-col="11"></div>
+						<div class="square" data-row="5" data-col="12"></div>
+						<div class="square" data-row="5" data-col="13"></div>
+					</div>
+					<div class="row" data-rowno="6">
+						<div class="square" data-row="6" data-col="0"></div>
+						<div class="square" data-row="6" data-col="1"></div>
+						<div class="square" data-row="6" data-col="2"></div>
+						<div class="square" data-row="6" data-col="3"></div>
+						<div class="square" data-row="6" data-col="4"></div>
+						<div class="square" data-row="6" data-col="5"></div>
+						<div class="square" data-row="6" data-col="6"></div>
+						<div class="square" data-row="6" data-col="7"></div>
+						<div class="square" data-row="6" data-col="8"></div>
+						<div class="square" data-row="6" data-col="9"></div>
+						<div class="square" data-row="6" data-col="10"></div>
+						<div class="square" data-row="6" data-col="11"></div>
+						<div class="square" data-row="6" data-col="12"></div>
+						<div class="square" data-row="6" data-col="13"></div>
+					</div>
+					<div class="row" data-rowno="7">
+						<div class="square" data-row="7" data-col="0"></div>
+						<div class="square" data-row="7" data-col="1"></div>
+						<div class="square" data-row="7" data-col="2"></div>
+						<div class="square" data-row="7" data-col="3"></div>
+						<div class="square" data-row="7" data-col="4"></div>
+						<div class="square" data-row="7" data-col="5"></div>
+						<div class="square" data-row="7" data-col="6"></div>
+						<div class="square" data-row="7" data-col="7"></div>
+						<div class="square" data-row="7" data-col="8"></div>
+						<div class="square" data-row="7" data-col="9"></div>
+						<div class="square" data-row="7" data-col="10"></div>
+						<div class="square" data-row="7" data-col="11"></div>
+						<div class="square" data-row="7" data-col="12"></div>
+						<div class="square" data-row="7" data-col="13"></div>
+					</div>
+					<div class="row" data-rowno="8">
+						<div class="square" data-row="8" data-col="0"></div>
+						<div class="square" data-row="8" data-col="1"></div>
+						<div class="square" data-row="8" data-col="2"></div>
+						<div class="square" data-row="8" data-col="3"></div>
+						<div class="square" data-row="8" data-col="4"></div>
+						<div class="square" data-row="8" data-col="5"></div>
+						<div class="square" data-row="8" data-col="6"></div>
+						<div class="square" data-row="8" data-col="7"></div>
+						<div class="square" data-row="8" data-col="8"></div>
+						<div class="square" data-row="8" data-col="9"></div>
+						<div class="square" data-row="8" data-col="10"></div>
+						<div class="square" data-row="8" data-col="11"></div>
+						<div class="square" data-row="8" data-col="12"></div>
+						<div class="square" data-row="8" data-col="13"></div>
+					</div>
+					<div class="row" data-rowno="9">
+						<div class="square" data-row="9" data-col="0"></div>
+						<div class="square" data-row="9" data-col="1"></div>
+						<div class="square" data-row="9" data-col="2"></div>
+						<div class="square" data-row="9" data-col="3"></div>
+						<div class="square" data-row="9" data-col="4"></div>
+						<div class="square" data-row="9" data-col="5"></div>
+						<div class="square" data-row="9" data-col="6"></div>
+						<div class="square" data-row="9" data-col="7"></div>
+						<div class="square" data-row="9" data-col="8"></div>
+						<div class="square" data-row="9" data-col="9"></div>
+						<div class="square" data-row="9" data-col="10"></div>
+						<div class="square" data-row="9" data-col="11"></div>
+						<div class="square" data-row="9" data-col="12"></div>
+						<div class="square" data-row="9" data-col="13"></div>
+					</div>
+					<div class="row" data-rowno="10">
+						<div class="square" data-row="10" data-col="0"></div>
+						<div class="square" data-row="10" data-col="1"></div>
+						<div class="square" data-row="10" data-col="2"></div>
+						<div class="square" data-row="10" data-col="3"></div>
+						<div class="square" data-row="10" data-col="4"></div>
+						<div class="square" data-row="10" data-col="5"></div>
+						<div class="square" data-row="10" data-col="6"></div>
+						<div class="square" data-row="10" data-col="7"></div>
+						<div class="square" data-row="10" data-col="8"></div>
+						<div class="square" data-row="10" data-col="9"></div>
+						<div class="square" data-row="10" data-col="10"></div>
+						<div class="square" data-row="10" data-col="11"></div>
+						<div class="square" data-row="10" data-col="12"></div>
+						<div class="square" data-row="10" data-col="13"></div>
+					</div>
+					<div class="row" data-rowno="11">
+						<div class="square" data-row="11" data-col="0"></div>
+						<div class="square" data-row="11" data-col="1"></div>
+						<div class="square" data-row="11" data-col="2"></div>
+						<div class="square" data-row="11" data-col="3"></div>
+						<div class="square" data-row="11" data-col="4"></div>
+						<div class="square" data-row="11" data-col="5"></div>
+						<div class="square" data-row="11" data-col="6"></div>
+						<div class="square" data-row="11" data-col="7"></div>
+						<div class="square" data-row="11" data-col="8"></div>
+						<div class="square" data-row="11" data-col="9"></div>
+						<div class="square" data-row="11" data-col="10"></div>
+						<div class="square" data-row="11" data-col="11"></div>
+						<div class="square" data-row="11" data-col="12"></div>
+						<div class="square" data-row="11" data-col="13"></div>
+					</div>
+					<div class="row" data-rowno="12">
+						<div class="square" data-row="12" data-col="0"></div>
+						<div class="square" data-row="12" data-col="1"></div>
+						<div class="square" data-row="12" data-col="2"></div>
+						<div class="square" data-row="12" data-col="3"></div>
+						<div class="square" data-row="12" data-col="4"></div>
+						<div class="square" data-row="12" data-col="5"></div>
+						<div class="square" data-row="12" data-col="6"></div>
+						<div class="square" data-row="12" data-col="7"></div>
+						<div class="square" data-row="12" data-col="8"></div>
+						<div class="square" data-row="12" data-col="9"></div>
+						<div class="square" data-row="12" data-col="10"></div>
+						<div class="square" data-row="12" data-col="11"></div>
+						<div class="square" data-row="12" data-col="12"></div>
+						<div class="square" data-row="12" data-col="13"></div>
+					</div>
+					<div class="row" data-rowno="13">
+						<div class="square" data-row="13" data-col="0"></div>
+						<div class="square" data-row="13" data-col="1"></div>
+						<div class="square" data-row="13" data-col="2"></div>
+						<div class="square" data-row="13" data-col="3"></div>
+						<div class="square" data-row="13" data-col="4"></div>
+						<div class="square" data-row="13" data-col="5"></div>
+						<div class="square" data-row="13" data-col="6"></div>
+						<div class="square" data-row="13" data-col="7"></div>
+						<div class="square" data-row="13" data-col="8"></div>
+						<div class="square" data-row="13" data-col="9"></div>
+						<div class="square" data-row="13" data-col="10"></div>
+						<div class="square" data-row="13" data-col="11"></div>
+						<div class="square" data-row="13" data-col="12"></div>
+						<div class="square" data-row="13" data-col="13"></div>
+					</div>
+				</div>
+				<div id="hintDiv">
+					<button id="hintButton">
+						<h2><img id="hintBulb" src="assets/img/wordsearch/pawbulb.png" class="shadowed"> ...not sure who you're looking for?  Tap <span id="hint">here</span> for some help!</h2>
+					</button>
+				</div>
+			</div>
+			<div id="rightDiv">
+				&nbsp
+				<canvas id="rightCanvas" width="494" height="1000"></canvas>
+			</div>
+		</div>
+
+		<div id="hintPopup" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<h2>Who's hiding in this WordSearch?</h2>
+				</div>
+				<div class="modal-content-box">
+					<div class="modal-body-left">
+						<ul id="hintList">
+							<li data-hintLi="0"></li>
+							<li data-hintLi="1"></li>
+							<li data-hintLi="2"></li>
+							<li data-hintLi="3"></li>
+							<li data-hintLi="4"></li>
+							<li data-hintLi="5"></li>
+						</ul>
+					</div>
+					<div class="modal-body-right">
+						<ul id="hintList">
+							<li data-hintLi="6"></li>
+							<li data-hintLi="7"></li>
+							<li data-hintLi="8"></li>
+							<li data-hintLi="9"></li>
+							<li data-hintLi="10"></li>
+							<li data-hintLi="11"></li>
+						</ul>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<h2>Tap anywhere to close...</h2>
+				</div>
+			</div>
+		</div>
+
+		<div id="winPopup" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<h2>Well done!</h2>
+				</div>
+				<div class="modal-content-box">
+					<p>Do you want to play a new game,<br>
+					or go back to the main menu?</p>
+				</div>
+				<div class="modal-footer">
+					&nbsp
+					<div id="newGameBtn" class="modal-btn">New game</div>
+					<div id="mainMenuBtn" class="modal-btn">Main menu</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="assets/js/wordsearch.js"></script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+body {
+	margin: 0 auto;
+	padding: 0;
+}
+h2 {
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	text-shadow: 0px 0px 3px white;
+	font-size: 1.8rem;
+	margin-bottom: 30px;
+}
+li {
+	list-style: none;
+}
+li:before {
+	margin-right: 10px;
+	list-style: none;
+	content: '\f1b0';
+	font-family: 'FontAwesome';
+}
+.backgroundDiv {
+	background: url('../img/BG_Galapagos.jpg');
+}
+#mainMenu {
+  font-family: 'Averia Sans Libre', cursive;
+  width: 150px;
+  height: 44px;
+  border-radius: 20px;
+  margin-top: 25px;
+  margin-left: 45px;
+  padding-left: 10px;
+  position: absolute;
+  top: 20px;
+  font-size: 2.5em;
+  color: #133913;
+  border: 2px solid black;
+  background: rgba(240, 250, 240, 0.5);
+}
+#mainMenu span {
+  position: relative;
+  top: -8px;
+  font-size: .5em;
+  vertical-align: middle;
+}
+#mainMenu img {
+  position: relative;
+  top: -8px;
+  padding-top: 0;
+  height: 30px;
+  display: inline-block;
+  vertical-align: middle;
+}
+#mainMenu a {
+  text-decoration: none;
+  color: #133913;
+}
+
+
+
+#hint {
+	color: green;
+}
+#hintBulb {
+	vertical-align: middle;
+}
+#hintButton {
+	font-family: 'Averia Sans Libre', cursive;
+	display: block;
+	margin: auto;
+	border: none;
+	background: none;
+	transition: 0.3s;
+}
+#hintButton:hover { 
+    -webkit-filter: drop-shadow(0px 0px 10px #ffdd00);
+    filter: drop-shadow(0px 0px 10px #ffdd00);
+}
+
+/* Page layout styles */
+#divAll {
+	margin: 0 auto;
+	width: 1800px;
+	height: 1000px;
+}
+#mainDiv {
+	width: 812px;
+	height: 812px;
+	display: inline-block;
+	float: left;
+}
+#gridDiv {
+	display: inline-block;
+	width: 812px;
+}
+#gridCanvas {
+	position: absolute;
+	pointer-events: none;
+	height: 812;
+	width: 812;
+}
+#leftDiv {
+	float: left;
+	width: 494px;
+	height: 1000px;
+}
+#rightDiv {
+	float: left;
+	width: 494px;
+	height: 1000px;
+}
+#leftCanvas {
+	position: absolute;
+	pointer-events: none;
+}
+
+/* Grid square styles */
+.square {
+	font-family: 'Handlee', cursive;
+	font-weight: bold;
+	font-size: 2em;
+	text-shadow: none;
+	width: 52px;
+	height: 45px;
+	float: left;
+	text-align: center;
+	padding-top: 7px;
+	background-color: rgba(121, 210, 121, 0.5);
+	margin: 3px;
+	transition: 1.0s;
+}
+.first {
+	background: #39ac39;
+}
+.chosen {
+	background: #39ac39;
+}
+.hovered {
+	background: #39ac39;
+	transition: 0.3s;
+	animation-name: flashingsq;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-duration: 0.5s; /* length of the complete  carousel rotation of all images */
+}
+@keyframes flashingsq {
+  0% {
+	background: #39ac39;
+  }
+  50% {  /*should be adjusted in line with next keyframe to represent first fade-in end time */
+	background: #40bf40;
+  }
+  100% {
+	background: #39ac39;
+  }
+}
+.notFoundName {
+	color: green;
+	font-weight: bold;
+}
+.foundName {
+	text-decoration: line-through;
+	color: grey;
+}
+
+/* formatting for hint & popup */
+.modal {
+	font-family: 'Averia Sans Libre', cursive;
+	text-shadow: none;
+	font-size: 1.5em;
+    display: none; 		/* Hidden by default */
+    position: fixed; 	/* Stay in place */
+    z-index: 1; 		/* Sit on top */
+    padding-top: 180px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.8s;
+    animation-name: animatetop;
+    animation-duration: 0.8s
+}
+@-webkit-keyframes animatetop {
+    from {top:-100px; opacity:0} 
+    to {top:0; opacity:1}
+}
+@keyframes animatetop {
+    from {top:-100px; opacity:0}
+    to {top:0; opacity:1}
+}
+.modal-header {
+    padding: 10px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+.modal-content-box {
+	padding: 10px;
+	float: left;
+	width: 580px;
+	background: white;
+	text-align: center;
+}
+.modal-body-left {
+	padding: 2px 2px;
+	width: 280px;
+	float: left;
+	text-align: left;
+}
+.modal-body-right {
+	padding: 2px 2px;
+	width: 280px;
+	float: right;
+	text-align: left;
+}
+.modal-footer {
+    padding: 10px 100px;
+    background-color: #5cb85c;
+    color: white;
+    clear:both;
+}
+div.modal-btn:hover{
+	text-shadow: 0px 0px 10px yellow;
+	transition: 0.3s;
+}
+#newGameBtn {
+	float: left;
+}
+#mainMenuBtn {
+	float: right;
+}
+.modal-footer, .modal-header > h1, h2, h3 {
+	text-shadow: none;
+} 
