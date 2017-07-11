@@ -2,7 +2,7 @@ body {
 	margin: 0 auto;
 	padding: 0;
 }
-h2 {
+h1, h2 {
 	text-align: center;
 	vertical-align: middle;
 	margin-top: 4px;
@@ -10,6 +10,10 @@ h2 {
 	text-shadow: 0px 0px 3px white;
 	font-size: 1.8rem;
 	margin-bottom: 30px;
+}
+h1 {
+	font-size: 2rem;
+	margin-top: 10px;
 }
 li {
 	list-style: none;
@@ -56,9 +60,6 @@ li:before {
   text-decoration: none;
   color: #133913;
 }
-
-
-
 #hint {
 	color: green;
 }

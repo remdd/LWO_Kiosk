@@ -31,6 +31,15 @@ $(document).ready(function() {
 	var hintBtn = document.getElementById("hintButton");
 	var divAll = document.getElementById("divAll");
 
+	$('.mainMenuLink').click(function(event) {
+		event.preventDefault();
+		newLocation = this.href;
+		$('html').fadeOut('slow', newpage);
+	});
+
+	function newpage() {
+		window.location = newLocation;
+	}
 
 	function newGame() {
 		winModal.style.display = "none";
@@ -90,8 +99,6 @@ $(document).ready(function() {
 				clearDown();
 			});
 			var mainMenuBtn = document.getElementById("mainMenuBtn");
-
-			// 	Sort this out!																	XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 			mainMenuBtn.addEventListener("click", function() {
 				document.getElementById("bgDiv").classList.remove("revealed");
 				setTimeout(function() {
