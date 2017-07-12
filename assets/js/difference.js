@@ -2,6 +2,15 @@ $(document).ready(function(){
 
 	$('body').fadeIn('slow');
 
+	$('#mainMenuBtnLink').click(function(event) {
+		event.preventDefault();
+		newLocation = this.href;
+		$('html').fadeOut('slow', newpage);
+	});
+	function newpage() {
+		window.location = newLocation;
+	}
+
 	var difference = {}
 	difference.allImageSets = [];
 	difference.rightSvg = document.getElementById("rightSvg");

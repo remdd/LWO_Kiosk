@@ -2,20 +2,20 @@ $(document).ready(function() {
 
 	$('body').fadeIn('slow');
 
-	var sqHt = 58; // total height of grid square, including margin
-	var ofSt = 5; // margin of rings around found words
-	var animalObjects = 0; // counts instances of animal object
-	var animalsFound = 0; // counts number of animals found by user
-	var animals = []; // array of animal objects
-	var colFirst;	// column of first selected square
-	var rowFirst;	// row of first selected square
-	var colSecond;	// column of second selected square
-	var rowSecond;	// row of second selected square
-	var colHover;	// column of square hovered after first square has been selected
-	var rowHover;	// row of square hovered after first square has been selected
-	var guess;		// guessed string
-	var revGuess;	// guessed string reversed
-	var found;		//
+	var sqHt = 58; 		// total height of individual grid square, including margin
+	var ofSt = 5; 		// margin of rings around found words
+	var animalObjects = 0; 	// counts instances of animal object
+	var animalsFound = 0; 	// counts number of animals found by user
+	var animals = []; 	// array of animal objects
+	var colFirst;		// column of first selected square
+	var rowFirst;		// row of first selected square
+	var colSecond;		// column of second selected square
+	var rowSecond;		// row of second selected square
+	var colHover;		// column of square hovered after first square has been selected
+	var rowHover;		// row of square hovered after first square has been selected
+	var guess;			// guessed string
+	var revGuess;		// guessed string reversed
+	var found;			//
 	var grid = document.querySelectorAll(".square");
 	var rows = document.querySelectorAll(".row").length;
 	var overlay = document.getElementById("gridCanvas");
@@ -24,14 +24,19 @@ $(document).ready(function() {
 	var commonLetters = ["E", "T", "A", "O", "I", "N", "S", "H", "R"];  // used for random letter generation in blank squares
 	var uncommLetters = ["D", "L", "C", "U", "M", "W", "F", "G"];
 	var rarestLetters = ["Y", "P", "B", "V", "K", "J", "X", "Q", "Z"];
-	var gameNumber = 3;		// grid number to be played
-	var numberOfGames = 4;	// need to manually increment when new grids are added, counts from zero
+	var gameNumber = 3;			// grid number to be played
+	var numberOfGames = 4;		// need to manually increment when new grids are added, counts from zero
 	var hintModal = document.getElementById("hintPopup");
 	var winModal = document.getElementById("winPopup");
 	var hintBtn = document.getElementById("hintButton");
 	var divAll = document.getElementById("divAll");
 
 	$('.mainMenuLink').click(function(event) {
+		event.preventDefault();
+		newLocation = this.href;
+		$('html').fadeOut('slow', newpage);
+	});
+	$('#mainMenuBtnLink').click(function(event) {
 		event.preventDefault();
 		newLocation = this.href;
 		$('html').fadeOut('slow', newpage);
@@ -97,13 +102,6 @@ $(document).ready(function() {
 				gameNumber++;
 				if(gameNumber > numberOfGames) {gameNumber = 0};
 				clearDown();
-			});
-			var mainMenuBtn = document.getElementById("mainMenuBtn");
-			mainMenuBtn.addEventListener("click", function() {
-				document.getElementById("bgDiv").classList.remove("revealed");
-				setTimeout(function() {
-					window.location = "index.html";
-				}, 1000)
 			});
 		};
 	};
@@ -559,7 +557,7 @@ $(document).ready(function() {
 			var fossa = new Animal("fossa", "Fossa", 1, 3, "horizontal", "right", 160, 755);
 		} else if (gameNumber === 3) {
 			var pygmymarmoset = new Animal("pygmymarmoset", "Pygmy Marmoset", 1, 1, "vertical", "left", 80, 70);
-			var harvestmouse = new Animal("harvestmouse", "Harvest Mouse", 12, 2, "vertical", "left", 5, 100);
+/*			var harvestmouse = new Animal("harvestmouse", "Harvest Mouse", 12, 2, "vertical", "left", 5, 100);
 			var tarantula = new Animal("tarantula", "Tarantula", 3, 12, "horizontal", "left", 170, 330);
 			var zebrahelicon = new Animal("zebrahelicon", "Zebra Helicon", 2, 10, "horizontal", "left", 5, 450);
 			var mara = new Animal("mara", "Mara", 7, 2, "horizontal", "left", 170, 600);
@@ -569,7 +567,7 @@ $(document).ready(function() {
 			var meerkat = new Animal("meerkat", "Meerkat", 2, 11, "diagonalUp", "right", 5, 380);
 			var clownfish = new Animal("clownfish", "Clownfish", 2, 0, "diagonalDown", "right", 180, 390);
 			var potoroo = new Animal("potoroo", "Potoroo", 1, 1, "diagonalDown", "right", 240, 610);
-			var tortoise = new Animal("tortoise", "Tortoise", 3, 12, "diagonalUp", "right", 20, 760);
+			var tortoise = new Animal("tortoise", "Tortoise", 3, 12, "diagonalUp", "right", 20, 760);*/
 		} else if (gameNumber === 4) {
 			var waterdragon = new Animal("waterdragon", "Water Dragon", 11, 0, "vertical", "left", 0, 50);
 			var fruitbat = new Animal("fruitbat", "Fruit Bat", 4, 13, "horizontal", "left", 50, 170);

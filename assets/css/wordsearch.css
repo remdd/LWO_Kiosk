@@ -1,19 +1,12 @@
-body {
-	margin: 0 auto;
-	padding: 0;
+.backgroundDiv {
+	background: url('../img/BG_Galapagos.jpg');
 }
 h1, h2 {
 	text-align: center;
-	vertical-align: middle;
-	margin-top: 4px;
-	margin-bottom: 4px;
-	text-shadow: 0px 0px 3px white;
-	font-size: 1.8rem;
-	margin-bottom: 30px;
 }
 h1 {
-	font-size: 2rem;
 	margin-top: 10px;
+	margin-bottom: 30px;
 }
 li {
 	list-style: none;
@@ -24,42 +17,6 @@ li:before {
 	content: '\f1b0';
 	font-family: 'FontAwesome';
 }
-.backgroundDiv {
-	background: url('../img/BG_Galapagos.jpg');
-}
-#mainMenu {
-  font-family: 'Averia Sans Libre', cursive;
-  width: 150px;
-  height: 44px;
-  border-radius: 20px;
-  margin-top: 25px;
-  margin-left: 45px;
-  padding-left: 10px;
-  position: absolute;
-  top: 20px;
-  font-size: 2.5em;
-  color: #133913;
-  border: 2px solid black;
-  background: rgba(240, 250, 240, 0.5);
-}
-#mainMenu span {
-  position: relative;
-  top: -8px;
-  font-size: .5em;
-  vertical-align: middle;
-}
-#mainMenu img {
-  position: relative;
-  top: -8px;
-  padding-top: 0;
-  height: 30px;
-  display: inline-block;
-  vertical-align: middle;
-}
-#mainMenu a {
-  text-decoration: none;
-  color: #133913;
-}
 #hint {
 	color: green;
 }
@@ -67,7 +24,6 @@ li:before {
 	vertical-align: middle;
 }
 #hintButton {
-	font-family: 'Averia Sans Libre', cursive;
 	display: block;
 	margin: auto;
 	border: none;
@@ -237,11 +193,14 @@ li:before {
 div.modal-btn:hover{
 	text-shadow: 0px 0px 10px yellow;
 	transition: 0.3s;
+} .modal-btn a {
+	text-decoration: none;
+	color: white;
 }
 #newGameBtn {
 	float: left;
 }
-#mainMenuBtn {
+#modalMainMenuBtn {
 	float: right;
 }
 .modal-footer, .modal-header > h1, h2, h3 {
