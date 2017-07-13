@@ -26,11 +26,13 @@ $(document).ready(function() {
 	var rarestLetters = ["Y", "P", "B", "V", "K", "J", "X", "Q", "Z"];
 	var gameNumber = 3;			// grid number to be played
 	var numberOfGames = 4;		// need to manually increment when new grids are added, counts from zero
+	var gameArray = [];
 	var hintModal = document.getElementById("hintPopup");
 	var winModal = document.getElementById("winPopup");
 	var hintBtn = document.getElementById("hintButton");
 	var divAll = document.getElementById("divAll");
 
+	// Navigation, fade page
 	$('.mainMenuLink').click(function(event) {
 		event.preventDefault();
 		newLocation = this.href;
@@ -41,7 +43,6 @@ $(document).ready(function() {
 		newLocation = this.href;
 		$('html').fadeOut('slow', newpage);
 	});
-
 	function newpage() {
 		window.location = newLocation;
 	}
@@ -58,12 +59,6 @@ $(document).ready(function() {
 			hintModal.style.display = "block";
 			hint();
 		};
-		hintBtn.addEventListener("mouseover", function() {
-			document.getElementById("hintBulb").src = "assets/img/wordsearch/pawbulb-lit.png";
-		});
-		hintBtn.addEventListener("mouseout", function() {
-			document.getElementById("hintBulb").src = "assets/img/wordsearch/pawbulb.png";
-		});
 		$('#divAll').fadeIn('slow');
 	};
 
@@ -584,6 +579,33 @@ $(document).ready(function() {
 		};
 	};
 
+	hintBtn.addEventListener("mouseover", function() {
+		document.getElementById("hintBulb").src = "assets/img/wordsearch/pawbulb-lit.png";
+	});
+	hintBtn.addEventListener("mouseout", function() {
+		document.getElementById("hintBulb").src = "assets/img/wordsearch/pawbulb.png";
+	});
+
+/*
+	function shuffle (array) {
+	  var i = 0
+	    , j = 0
+	    , temp = null
+
+	  for (i = array.length - 1; i > 0; i -= 1) {
+	    j = Math.floor(Math.random() * (i + 1))
+	    temp = array[i]
+	    array[i] = array[j]
+	    array[j] = temp
+	  }
+	}
+
+	function newLoad() {
+		for var(i = 0; i <= numberOfGames; i++) {
+			gameArray[i] = false;
+		}
+	}
+*/
 	newGame();
 
 });

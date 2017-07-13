@@ -77,6 +77,30 @@
   animation-delay: 10s;
 } .rightDiv img:nth-of-type(4) {
   animation-delay: 15s;
+} .rightDiv img:nth-of-type(5) {
+  animation-delay: 20s;
+} .rightDiv img:nth-of-type(6) {
+  animation-delay: 25s;
+} .rightDiv img:nth-of-type(7) {
+  animation-delay: 30s;
+} .rightDiv img:nth-of-type(8) {
+  animation-delay: 35s;
+} .rightDiv img:nth-of-type(9) {
+  animation-delay: 40s;
+} .rightDiv img:nth-of-type(10) {
+  animation-delay: 45s;
+} .rightDiv img:nth-of-type(11) {
+  animation-delay: 50s;
+} .rightDiv img:nth-of-type(12) {
+  animation-delay: 55s;
+} .rightDiv img:nth-of-type(13) {
+  animation-delay: 60s;
+} .rightDiv img:nth-of-type(14) {
+  animation-delay: 65s;
+} .rightDiv img:nth-of-type(15) {
+  animation-delay: 70s;
+} .rightDiv img:nth-of-type(16) {
+  animation-delay: 75s;
 } .galleryImg {
 	max-height: 100%;
 	max-width: 100%;
@@ -92,21 +116,21 @@
 	animation-name: galleryFadeInOut;
 	animation-timing-function: ease-in-out;
 	animation-iteration-count: infinite;
-	animation-duration: 20s; /* length of the complete  carousel rotation of all images */
+	animation-duration: 80s; /* length of the complete  carousel rotation of all images */
 	opacity: 0;
-	box-shadow: 4px 4px 4px rgba(0,0,0,0.5);
+	box-shadow: 0 0 10px rgba(0,0,0,0.8), 8px 8px 20px rgba(0,0,0,0.5);
 	border-radius: 15px;
 } @keyframes galleryFadeInOut {
   0% {
     opacity:0;
   }
-  5% {  /*should be adjusted in line with next keyframe to represent first fade-in end time */
+  1.25% {  /*should be adjusted in line with next keyframe to represent first fade-in end time */
     opacity:1;
   }
-  25% {  /*should be adjusted to 100% / number of images */
+  6.25% {  /*should be adjusted to 100% / number of images */
     opacity:1;
   }
-  30% {  /*should be adjusted in line with previous keyframe to represent first fade-out end time */
+  7.5% {  /*should be adjusted in line with previous keyframe to represent first fade-out end time */
     opacity:0;
   }
   100% {
