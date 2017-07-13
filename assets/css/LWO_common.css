@@ -1,5 +1,6 @@
 html {
-/*	zoom: 80%;	*/			/*For laptop demo purposes only - sets master zoom */
+	zoom: 80%;				/*For laptop demo purposes only - sets master zoom */
+	user-select: none;
 }
 html, body {
 	margin: 0;

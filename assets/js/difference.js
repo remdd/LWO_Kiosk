@@ -69,7 +69,6 @@ $(document).ready(function(){
 			});
 		}
 		difference.handle = setInterval(function() {
-			console.log(difference.timer);
 			difference.timer++;
 		}, 1000);
 		difference.newGameModal.style.display = "none";

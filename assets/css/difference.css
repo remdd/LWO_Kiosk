@@ -175,7 +175,7 @@ ellipse {
 	font-size: 1.0em;
 	background: rgba(121, 210, 121, 0.9);
 	border: solid 5px;
-	border-image: url("../Img/WoodTextureBtn.jpg") 30 round;
+	border-image: url("../img/difference/WoodTextureBtn.jpg") 30 round;
 }
 .bigModal-btn {
 	margin: 10px;
