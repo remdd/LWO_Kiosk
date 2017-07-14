@@ -1,25 +1,21 @@
 $('document').ready(function() {
 	$('body').fadeIn('slow', function(){
 
+		// Fade out on main menu btn
 		$('#mainMenuBtnLink').click(function(event) {
 			event.preventDefault();
 			newLocation = this.href;
 			$('html').fadeOut('slow', newpage);
 		});
-
 		function newpage() {
 			window.location = newLocation;
 		}
 
-
 		var slides = $('.slide').toArray();
 		var timeStops = $('.timeStop').toArray();
-
-		var slideNo = 0;		// holds number of slide to be displayed
+		var slideNo = 0;		// Starting slide to display, updated as user moves through slides
 		showSlide();
 		selectTimeStop();
-
-		deactivateNextBtn();
 
 		var dinasSlideNo = 0;
 		var plantlifeSlideNo = 0;
@@ -30,9 +26,7 @@ $('document').ready(function() {
 		var floodsSlideNo = 0;
 
 		$('#downTimeBtn').click(function(){
-			if(slideNo === slides.length) {
-				alert("End of slides!");
-			} else {
+			if(slideNo !== slides.length - 1) {
 				hideSlide();
 				deselectTimeStop();
 				slideNo++;
@@ -40,22 +34,70 @@ $('document').ready(function() {
 					startFireworks();
 					fireworksPlayed = true;
 				};
-				showSlide();			
-				selectTimeStop();	
+				showSlide();		
+				selectTimeStop();
+				checkSlideEnds();
 			}
 		});
 
 		$('#upTimeBtn').click(function(){
-			if(slideNo === 0) {
-				alert("Start of slides!");
-			} else {
+			if(slideNo !== 0) {
 				hideSlide();
 				deselectTimeStop();
 				slideNo--;
 				showSlide();		
 				selectTimeStop();	
+				checkSlideEnds();
 			}
 		});
+
+		function checkSlideEnds () {
+			if(slideNo === 0) {
+				disableDownPointer();
+				disableUpPointer();
+				enableDownPointer();
+			} else if(slideNo === slides.length -1) {
+				disableUpPointer();
+				disableDownPointer();
+				enableUpPointer();
+			} else {
+				disableUpPointer();
+				disableDownPointer();
+				enableUpPointer();
+				enableDownPointer();
+			}
+		}
+
+		function disableUpPointer () {
+			$('.upPointer').removeClass('flashUpPointer');
+			$('.upScrollBtn').removeClass('flashBtn');
+			reflow();
+			$('.upScrollBtn').addClass('disabledBtnText');
+		}
+		function disableDownPointer () {
+			$('.downPointer').removeClass('flashDownPointer');
+			$('.downScrollBtn').removeClass('flashBtn');
+			reflow();
+			$('.downScrollBtn').addClass('disabledBtnText');
+		}
+		function enableUpPointer () {
+			$('.upScrollBtn').removeClass('disabledBtnText');
+			reflow();
+			$('.upPointer').addClass('flashUpPointer');
+			$('.upScrollBtn').addClass('flashBtn');
+		}
+		function enableDownPointer () {
+			$('.downScrollBtn').removeClass('disabledBtnText');
+			reflow();
+			$('.downPointer').addClass('flashDownPointer');
+			$('.downScrollBtn').addClass('flashBtn');
+		}
+		function reflow(){
+ 			document.querySelector('.upPointer').offsetHeight;
+ 			document.querySelector('.upScrollBtn').offsetHeight;
+ 			document.querySelector('.downPointer').offsetHeight;
+ 			document.querySelector('.downScrollBtn').offsetHeight;
+		}
 
 		function hideSlide () {
 			$(slides[slideNo]).removeClass('revealedSlide');
@@ -73,10 +115,6 @@ $('document').ready(function() {
 		function deselectTimeStop () {
 			$(timeStops[slideNo]).removeClass('selected');
 		}
-		function deactivateNextBtn () {
-			$('#downTimeBtn').removeClass('')
-		}
-
 		function openModal () {
 			$('#overlay').removeClass('noOverlay');
 			$('#overlay').addClass('activeOverlay');

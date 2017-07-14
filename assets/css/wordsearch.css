@@ -99,13 +99,13 @@ li:before {
 	animation-name: flashingsq;
 	animation-timing-function: ease-in-out;
 	animation-iteration-count: infinite;
-	animation-duration: 0.5s; /* length of the complete  carousel rotation of all images */
+	animation-duration: 0.5s;
 }
 @keyframes flashingsq {
   0% {
 	background: #39ac39;
   }
-  50% {  /*should be adjusted in line with next keyframe to represent first fade-in end time */
+  50% {
 	background: #40bf40;
   }
   100% {

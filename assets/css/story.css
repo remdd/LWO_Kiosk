@@ -92,9 +92,7 @@ hr {
 .timelineContent {
 	box-shadow: 5px 10px 20px 0px rgba(0,0,0,0.6);
 }
-.timeBtn {
-	
-}
+
 @keyframes btnFlash {
 	0% {background: white;}
 	50% {background: #f9c581;}
@@ -118,7 +116,7 @@ hr {
 	animation: downPointerFlash 1.5s infinite;
 }
 .timeScrollBtn {
-	background: white;
+	background: lightgrey;
 	height: 40px;
 	font-size: 1.8em;
 	text-align: center;
@@ -133,9 +131,9 @@ hr {
 	border-right: 100px solid transparent;
 }
 .upPointer {
-	border-bottom: 50px solid white;
+	border-bottom: 50px solid lightgrey;
 } .downPointer {
-	border-top: 50px solid white;
+	border-top: 50px solid lightgrey;
 } 
 .upScrollBtn {
 	padding-bottom: 10px;
@@ -143,6 +141,9 @@ hr {
 }.downScrollBtn {
 	padding-top: 10px;
 	border-top: 2px solid black;
+}
+.disabledBtnText {
+	color: #666666;
 }
 .timeBtn {
 	height: 100px;
