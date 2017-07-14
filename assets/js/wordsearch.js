@@ -24,7 +24,7 @@ $(document).ready(function() {
 	var commonLetters = ["E", "T", "A", "O", "I", "N", "S", "H", "R"];  // used for random letter generation in blank squares
 	var uncommLetters = ["D", "L", "C", "U", "M", "W", "F", "G"];
 	var rarestLetters = ["Y", "P", "B", "V", "K", "J", "X", "Q", "Z"];
-	var gameNumber = 3;			// grid number to be played
+	var gameNumber = 0;			// grid number to be played
 	var numberOfGames = 4;		// need to manually increment when new grids are added, counts from zero
 	var gameArray = [];
 	var hintModal = document.getElementById("hintPopup");
@@ -47,13 +47,46 @@ $(document).ready(function() {
 		window.location = newLocation;
 	}
 
+	function initialize() {
+		var newGameBtn = document.getElementById("newGameBtn");
+		newGameBtn.addEventListener("click", function() {
+			gameNumber++;
+			if(gameNumber > numberOfGames) {gameNumber = 0};
+			clearDown();
+		});
+		for (var i = 0; i <= numberOfGames; i++) {
+			gameArray[i] = i;
+		}
+		shuffle(gameArray);
+		newGame();
+
+	}
+
+	function shuffle(array) {
+	  var currentIndex = array.length, temporaryValue, randomIndex;
+
+	  // While there remain elements to shuffle...
+	  while (0 !== currentIndex) {
+
+	    // Pick a remaining element...
+	    randomIndex = Math.floor(Math.random() * currentIndex);
+	    currentIndex -= 1;
+
+	    // And swap it with the current element.
+	    temporaryValue = array[currentIndex];
+	    array[currentIndex] = array[randomIndex];
+	    array[randomIndex] = temporaryValue;
+	  }
+	  return array;
+	}
+
 	function newGame() {
 		winModal.style.display = "none";
 		animalObjects = 0;
 		animalsFound = 0;
 		animals = [];
 		firstSelected = false;
-		setupAnimals();
+		setupAnimals(gameArray[gameNumber]);
 		addRandomLetters();
 		hintBtn.onclick = function() {
 			hintModal.style.display = "block";
@@ -92,12 +125,6 @@ $(document).ready(function() {
 	function checkIfWon() {
 		if(animalsFound === animals.length) {
 			winModal.style.display = "block";
-			var newGameBtn = document.getElementById("newGameBtn");
-			newGameBtn.addEventListener("click", function() {
-				gameNumber++;
-				if(gameNumber > numberOfGames) {gameNumber = 0};
-				clearDown();
-			});
 		};
 	};
 
@@ -540,8 +567,8 @@ $(document).ready(function() {
 	};
 
 	// When adding a new grid, add in the order to appear in side canvases & help list: 1-6 left then 1-6 right
-	function setupAnimals() {
-		if (gameNumber === 0) {
+	function setupAnimals(num) {
+		if (num === 0) {
 			var mara = new Animal("mara", "Mara", 8, 2, "vertical", "left", 50, 80);
 			var pacu = new Animal("pacu", "Pacu", 3, 5, "horizontal", "left", 210, 280);
 			var leafcutterant = new Animal("leafcutterant", "Leafcutter Ant", 1, 1, "horizontal", "left", 5, 300);
@@ -554,7 +581,7 @@ $(document).ready(function() {
 			var chameleon = new Animal("chameleon", "Chameleon", 5, 13, "diagonalUp", "right", 60, 445);
 			var snowleopard = new Animal("snowleopard", "Snow Leopard", 0, 3, "diagonalDown", "right", 135, 700);
 			var canetoad = new Animal("canetoad", "Cane Toad", 13, 3, "vertical", "right", 20, 645);
-		} else if (gameNumber === 1) {
+		} else if (num === 1) {
 			var cricket = new Animal("cricket", "Cricket", 13, 4, "vertical", "left", 205, 80);
 			var lungfish = new Animal("lungfish", "Lungfish", 3, 0, "diagonalDown", "left", 0, 130);
 			var canetoad = new Animal("canetoad", "Cane Toad", 12, 0, "vertical", "left", 0, 330);
@@ -567,7 +594,7 @@ $(document).ready(function() {
 			var tokaygecko = new Animal("tokaygecko", "Tokay Gecko", 1, 1, "vertical", "right", 25, 220);
 			var mara = new Animal("mara", "Mara", 9, 1, "vertical", "right", 150, 460);
 			var monal = new Animal("monal", "Monal", 5, 0, "vertical", "right", 170, 670);
-		} else if (gameNumber === 2) {
+		} else if (num === 2) {
 			var snowleopard = new Animal("snowleopard", "Snow Leopard", 0, 12, "diagonalUp", "left", 100, 50);
 			var pacu = new Animal("pacu", "Pacu", 11, 0, "vertical", "left", 0, 275);
 			var leafcutterant = new Animal("leafcutterant", "Leafcutter Ant", 1, 0, "vertical", "left", 245, 350);
@@ -580,9 +607,9 @@ $(document).ready(function() {
 			var cichlid = new Animal("cichlid", "Cichlid", 7, 13, "horizontal", "right", 130, 460);
 			var chameleon = new Animal("chameleon", "Chameleon", 1, 4, "diagonalDown", "right", 10, 575);
 			var fossa = new Animal("fossa", "Fossa", 1, 3, "horizontal", "right", 160, 755);
-		} else if (gameNumber === 3) {
+		} else if (num === 3) {
 			var pygmymarmoset = new Animal("pygmymarmoset", "Pygmy Marmoset", 1, 1, "vertical", "left", 80, 70);
-/*			var harvestmouse = new Animal("harvestmouse", "Harvest Mouse", 12, 2, "vertical", "left", 5, 100);
+			var harvestmouse = new Animal("harvestmouse", "Harvest Mouse", 12, 2, "vertical", "left", 5, 100);
 			var tarantula = new Animal("tarantula", "Tarantula", 3, 12, "horizontal", "left", 170, 330);
 			var zebrahelicon = new Animal("zebrahelicon", "Zebra Helicon", 2, 10, "horizontal", "left", 5, 450);
 			var mara = new Animal("mara", "Mara", 7, 2, "horizontal", "left", 170, 600);
@@ -592,8 +619,8 @@ $(document).ready(function() {
 			var meerkat = new Animal("meerkat", "Meerkat", 2, 11, "diagonalUp", "right", 5, 380);
 			var clownfish = new Animal("clownfish", "Clownfish", 2, 0, "diagonalDown", "right", 180, 390);
 			var potoroo = new Animal("potoroo", "Potoroo", 1, 1, "diagonalDown", "right", 240, 610);
-			var tortoise = new Animal("tortoise", "Tortoise", 3, 12, "diagonalUp", "right", 20, 760);*/
-		} else if (gameNumber === 4) {
+			var tortoise = new Animal("tortoise", "Tortoise", 3, 12, "diagonalUp", "right", 20, 760);
+		} else if (num === 4) {
 			var waterdragon = new Animal("waterdragon", "Water Dragon", 11, 0, "vertical", "left", 0, 50);
 			var fruitbat = new Animal("fruitbat", "Fruit Bat", 4, 13, "horizontal", "left", 50, 170);
 			var brownlemur = new Animal("brownlemur", "Brown Lemur", 3, 4, "diagonalDown", "left", 270, 190);
@@ -616,27 +643,7 @@ $(document).ready(function() {
 		document.getElementById("hintBulb").src = "assets/img/wordsearch/pawbulb.png";
 	});
 
-/*
-	function shuffle (array) {
-	  var i = 0
-	    , j = 0
-	    , temp = null
-
-	  for (i = array.length - 1; i > 0; i -= 1) {
-	    j = Math.floor(Math.random() * (i + 1))
-	    temp = array[i]
-	    array[i] = array[j]
-	    array[j] = temp
-	  }
-	}
-
-	function newLoad() {
-		for var(i = 0; i <= numberOfGames; i++) {
-			gameArray[i] = false;
-		}
-	}
-*/
-	newGame();
+	initialize();
 
 });
 
