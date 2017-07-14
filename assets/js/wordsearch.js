@@ -589,10 +589,10 @@ $(document).ready(function() {
 			var clownfish = new Animal("clownfish", "Clownfish", 5, 11, "horizontal", "left", 20, 580);
 			var goldenpheasant = new Animal("goldenpheasant", "Golden Pheasant", 0, 2, "horizontal", "left", 10, 810);
 			var waterdragon = new Animal("waterdragon", "Water Dragon", 2, 12, "diagonalUp", "right", 5, 40);
-			var potoroo = new Animal("potoroo", "Potoroo", 0, 13, "horizontal", "right", 10, 650);
 			var owlbutterfly = new Animal("owlbutterfly", "Owl Butterfly", 1, 2, "diagonalDown", "right", 245, 190);
 			var tokaygecko = new Animal("tokaygecko", "Tokay Gecko", 1, 1, "vertical", "right", 25, 220);
 			var mara = new Animal("mara", "Mara", 9, 1, "vertical", "right", 150, 460);
+			var potoroo = new Animal("potoroo", "Potoroo", 0, 13, "horizontal", "right", 10, 650);
 			var monal = new Animal("monal", "Monal", 5, 0, "vertical", "right", 170, 670);
 		} else if (num === 2) {
 			var snowleopard = new Animal("snowleopard", "Snow Leopard", 0, 12, "diagonalUp", "left", 100, 50);
