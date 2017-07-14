@@ -101,8 +101,37 @@ $(document).ready(function() {
 		};
 	};
 
+	var touchX;
+	var touchY;
+	var touchedElement;
+
+	$('#gridDiv').on("touchmove", function(event) {
+		stopHover();
+		touchedElement = document.elementFromPoint(event.touches[0].clientX, event.touches[0].clientY);
+		if($(touchedElement).hasClass("square")) {
+			secondHover(touchedElement);
+		}
+	});
+	$('#gridDiv').on("touchend touchcancel", function(event) {
+		stopHover();
+		if($(touchedElement).hasClass("square")) {
+			secondClick(touchedElement);
+		}
+	});
+
 	// Cycle through divs to add click listeners
 	for(var i = 0; i < grid.length; i++) {
+
+		$(grid[i]).on("touchstart click", function(event) {
+			if(!firstSelected) {
+				stopHover();
+				firstClick(this);
+			} else {
+				secondClick(this);
+			}
+		});
+
+		/*
 		grid[i].addEventListener("click", function() {
 			if(!firstSelected) {
 				firstClick(this);
@@ -120,6 +149,7 @@ $(document).ready(function() {
 				stopHover();
 			};
 		});
+		*/
 	};
 
 	function hint(){

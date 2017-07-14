@@ -1,6 +1,9 @@
 .backgroundDiv {
 	background: url('../img/BG_Galapagos.jpg');
 }
+.red {
+	color: red;
+}
 h1, h2 {
 	text-align: center;
 }
