@@ -41,15 +41,15 @@
 } #capsuleEvol {
 	background-image: url('../img/home/Capsule_Ammonite.jpg');
 } #capsuleButterfly {
-	background-image: url('../img/home/Capsule_Frog.jpg');
+	background-image: url('../img/home/Capsule_Butterfly.jpg');
 } #capsuleStory {
 	background-image: url('../img/home/Capsule_Pav.jpg');
 } #capsuleWho {
 	background-image: url('../img/home/Capsule_Pygmy.jpg');
 } #capsuleSearch {
-	background-image: url('../img/home/Capsule_Leaf.jpg');
+	background-image: url('../img/home/Capsule_Insect.jpg');
 } #capsuleDiff {
-	background-image: url('../img/home/Capsule_Crane.jpg');
+	background-image: url('../img/home/Capsule_Frog.jpg');
 } .capsuleLabel {
 	position: absolute;
 	top: 0;	bottom: 0; left: 0; right: 0;
@@ -57,6 +57,17 @@
 	height: 30%;
 	padding-left: 100px;
 	margin: auto;
+}
+.typeText {
+	position: absolute;
+	left: 390px;
+	top: 0;
+	color: #4f8239;
+}
+.typeIcon {
+	position: absolute;
+	left: 470px;
+	top: -15px;
 }
 
 /* Image Carousel */

@@ -4,7 +4,7 @@
 @font-face { font-family: 'Anton'; src: url('../fonts/Anton-Regular.ttf'); }
 
 html {
-/*	zoom: 80%;	*/			/*For laptop demo purposes only - sets master zoom */
+	zoom: 80%;				/*For laptop demo purposes only - sets master zoom */
 	user-select: none;
 }
 html, body {
@@ -17,6 +17,7 @@ body {
 	padding: 0;
 	font-family: 'Pangolin', cursive;
 	background: white;
+	
 }
 h1 {
 	font-family: 'Averia Sans Libre', cursive;
