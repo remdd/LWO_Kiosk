@@ -14,7 +14,7 @@
 
 	<div class="backgroundDiv">
 		<canvas id="fireworkCanvas" width="1920" height="1080"></canvas>
-		<div id="fireworkOverlayText" class="hiddenFireworkOverlayText">14 April 1992...<br>Opening Day!</div>
+		<div id="fireworkOverlayText" class="hiddenFireworkOverlayText">14 April 1992...<br>Opening Day!<br><span id="fireworkFootnote">tap to continue...</span></div>
 
 		<div id="overlay" class="noOverlay"></div>
 
@@ -36,59 +36,59 @@
 				</div>
 				<div id="timeStamps">
 					<div class="timelineContent timeGap timeGapLong">&nbsp;</div>
-					<div class="timelineContent timeStamp timeStop">
+					<div class="timelineContent timeStamp timeStop" data-timeStop="0">
 						<p class="timeYearOnly">1971</p>
 					</div>
 					<div class="timelineContent timeGap">&nbsp;</div>
-					<div class="timelineContent timeStamp timeStop">
+					<div class="timelineContent timeStamp timeStop" data-timeStop="1">
 						<p class="timeYearOnly">1988</p>
 					</div>
 					<div class="timelineContent timeGap">&nbsp;</div>
-					<div class="timelineContent timeStamp timeStop">
+					<div class="timelineContent timeStamp timeStop" data-timeStop="2">
 						<p class="timeYearOnly">1990</p>
 					</div>
 					<div class="timelineContent timeGap">&nbsp;</div>
-					<div class="timelineContent timeStamp timeStop">
+					<div class="timelineContent timeStamp timeStop" data-timeStop="3">
 						<p class="timeYearOnly">1991</p>
 					</div>
 					<div class="timelineContent timeGap">&nbsp;</div>
-					<div class="timelineContent timeStamp timeStop">
+					<div class="timelineContent timeStamp timeStop" data-timeStop="4">
 						<p class="timeMonthBoth">Early</p><p class="timeYearBoth">1992</p>
 					</div>
 					<div class="timelineContent timeGap">&nbsp;</div>
-					<div class="timelineContent timeStamp timeStop">
+					<div class="timelineContent timeStamp timeStop" data-timeStop="5">
 						<p class="timeMonthBoth">14 April</p><p class="timeYearBoth">1992</p>
 					</div>
 					<div class="timelineContent timeGap">&nbsp;</div>
-					<div class="timelineContent timeStamp timeStop">
+					<div class="timelineContent timeStamp timeStop" data-timeStop="6">
 						<p class="timeMonthBoth">18 May</p><p class="timeYearBoth">1996</p>
 					</div>
 					<div class="timelineContent timeGap">&nbsp;</div>
-					<div class="timelineContent timeStamp timeStop">
+					<div class="timelineContent timeStamp timeStop" data-timeStop="7">
 						<p class="timeYearOnly">2000</p>
 					</div>
 					<div class="timelineContent timeGap">&nbsp;</div>
-					<div class="timelineContent timeStamp timeStop">
+					<div class="timelineContent timeStamp timeStop" data-timeStop="8">
 						<p class="timeYearOnly">2005</p>
 					</div>
 					<div class="timelineContent timeGap">&nbsp;</div>
-					<div class="timelineContent timeStamp timeStop">
+					<div class="timelineContent timeStamp timeStop" data-timeStop="9">
 						<p class="timeYearOnly">2011</p>
 					</div> 
 					<div class="timelineContent timeGap">&nbsp;</div>
-					<div class="timelineContent timeStamp timeStop">
+					<div class="timelineContent timeStamp timeStop" data-timeStop="10">
 						<p class="timeYearOnly">2012</p>
 					</div> 
 					<div class="timelineContent timeGap">&nbsp;</div>
-					<div class="timelineContent timeStamp timeStop">
+					<div class="timelineContent timeStamp timeStop" data-timeStop="11">
 						<p class="timeYearOnly">2014</p>
 					</div> 
 					<div class="timelineContent timeGap">&nbsp;</div>
-					<div class="timelineContent timeStamp timeStop">
+					<div class="timelineContent timeStamp timeStop" data-timeStop="12">
 						<p class="timeYearOnly">2015</p>
 					</div> 
 					<div class="timelineContent timeGap">&nbsp;</div>
-					<div class="timelineContent timeStamp timeStop">
+					<div class="timelineContent timeStamp timeStop" data-timeStop="13">
 						<p class="timeYearSub">2017</p><p class="timeTextSub">...and beyond!</p>
 					</div> 
 					<div class="timelineContent timeGap timeGapLong">&nbsp;</div>
@@ -217,7 +217,7 @@
 					</div>
 					<div class="contentDiv revealDiv reveal2">
 						<p>Luckily, before too long a new opportunity presented itself.</p>
-						<p>A garden plant wholesale business on the border of Cumbria and Lancashire had recently decided to restructure and relocate, and was selling their premises.</p>
+						<p>A garden plant wholesale business on the border of Cumbria and Lancashire had recently ceased trading, and was selling their premises.</p>
 						<p>Excitingly, the site contained a trio of large, well-maintained greenhouses that had acted as nurseries for thousands of house and garden plants destined to be sold on to garden centres and other retailers.</p>
 						<p>With a bit of work, these greenhouses would be absolutely perfect for a collection of tropical plants and animals.</p>
 						<p>The aquarium plans were shelved. The Marsdens would build a zoo instead!</p>
@@ -280,7 +280,7 @@
 					<div class="contentDiv revealDiv reveal3">
 						<p>Transforming the trio of greenhouses from a plant nursery into tropical and butterfly halls, on a shoestring budget, took a great deal of work.</p>
 						<p>Along with any friends and family that they could recruit, Jo and Dave did everything possible themselves. Contractors were called in only where it was unavoidable, such as for building the extension that would house the zoo entrance, first rooms of exhibits and gift shop.</p>
-						<p>To make things just that little bit more complicated, an agreement was reached with the building's previous occupants for them to continue trading and running some parts of their business from the site, with building work carrying on around them, while they prepared to relocate to their new premises.</p>
+						<p>To make things just that little bit more complicated, an agreement was reached with some of the building's previous occupants for them to continue trading and running some parts of their business from the site, with building work carrying on around them, while they prepared to relocate to new premises.</p>
 					</div>
 				</div>
 
@@ -302,7 +302,7 @@
 						<p>The bats actually arrived several months before the Oasis was to open, and in the absence of a more suitable temporary home took up their roost on the ceiling of the tropical hall while the last few weeks of building and landscaping were still in full swing.</p>
 						<p>Nobody was sure what they would make of all the frantic activity going on below them, but as it turned out they can't have been overly bothered!</p>
 						<p>With a few weeks still to go to opening day, a builder glancing up into the rafters spotted a tiny, furry face looking back at him. Wrapped up safely in Belinda's wings, this baby bat was the Oasis' very first birth - quickly named Barney.</p>
-						<p>Other original inhabitants of the Wildlife Oasis included royal pythons from Chester Zoo, a pair of common marmosets, a few fish and various invertebrates.</p>
+						<p>Other original inhabitants of the Wildlife Oasis included a couple of black rat snakes from Chester Zoo, a pair of common marmosets, a few fish and various invertebrates.</p>
 					</div>
 
 					<div class="contentDiv popupDiv" id="popup-firstLeafletPics">
@@ -441,10 +441,10 @@
 					<div class="contentDiv revealDiv reveal2">
 						<p>Later in the year, in October, the Oasis became home to its first <span class="popupLink" id="popupLink-fossa">fossa</span> - a young female called Perdy.</p>
 						<hr>
-						<p>After the arrival of her mate Remus in XXXX, Perdy would go on to succesfully raise a total of four cubs - a pair in each of 2004 and XXXX.</p>
+						<p>After the arrival of her mate Remus in XXXX, Perdy would go on to succesfully raise a litter of 4 cubs in 2004.</p>
 						<figure>
 							<img src="assets/img/story/FossaCubs.jpg">
-							<figcaption>Perdy's first pair of cubs.</figcaption>
+							<figcaption>Two of Perdy's litter of cubs.</figcaption>
 						</figure>
 						<p>A successful captive breeding programme is a hugely important part of the international effort to safeguard the future of this highly vulnerable species.</p>
 					</div>
@@ -694,7 +694,7 @@
 						<p>Situated in a low lying area on the fringes of the Lake District, England's wettest region, the outside section of the Oasis is unfortunately vulnerable to flooding.</p>
 						<figure>
 							<img src="assets/img/story/Canoe.jpg">
-							<figcaption>One memorable episode in the mid 2000s saw the keepers resorting to a canoe to make part of their feeding rounds!</figcaption>
+							<figcaption>One memorable episode in the early 2000s saw the keepers resorting to a canoe to make part of their feeding rounds!</figcaption>
 						</figure>
 					</div>
 
@@ -736,7 +736,7 @@
 							</div>
 							<div class="gallerySlide data-galslide-3">
 								<img src="assets/img/story/Floods5.jpg">
-								<p>The marmosets' outdoor enclosures all flooded, but their elevated and heated indoor areas stayed dry.</p>
+								<p>The floods reached the indoor section of the marmoset enclosure as well as the outdoor parts, but fortunately their elevated, heated dens stayed powered and dry.</p>
 							</div>						
 							<div class="gallerySlide data-galslide-5">
 								<img src="assets/img/story/Floods6.jpg">
@@ -744,7 +744,7 @@
 							</div>						
 							<div class="gallerySlide data-galslide-7">
 								<img src="assets/img/story/Floods7.jpg">
-								<p>The ring-tailed lemur troop were fascinated by all the water, but were very careful to keep their toes dry.</p>
+								<p>The ring-tailed lemur troop were very frightened by the water and were careful to keep their toes dry.</p>
 							</div>
 						</div>
 						<div class="popupBtn closeBtn flashBtn">

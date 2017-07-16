@@ -48,7 +48,13 @@ hr {
 	white-space: nowrap;
 	transition: opacity 2s;
 	pointer-events: none;
-} .hiddenFireworkOverlayText {
+} #fireworkFootnote {
+	font-size: 4rem;
+	margin-top: 100px;
+	opacity: 0;
+	animation: reveal 1s 10s 1 forwards;
+}
+ .hiddenFireworkOverlayText {
 	opacity: 0;
 } .revealedFireworkOverlayText {
 	opacity: 1;
@@ -189,6 +195,7 @@ hr {
 	border: 2px solid black;
 } #timeStampsObscurer {
 	position: absolute;
+	pointer-events: none;
 	top: 122px;
 	left: 25px;
 	z-index: 1;
@@ -506,6 +513,8 @@ hr {
 	left: 60px;
 	top: 80px;
 	width: 600px;
+} [data-slide-5] img {
+	border: 2px solid black;
 } [data-slide-5] > div:nth-child(2) {
 	left: 850px;
 	top: 200px;
@@ -517,6 +526,7 @@ hr {
 	height: 900px;
 } [data-slide-5] > div:nth-child(3) img {
 	max-width: : 1000px;
+	border: 2px solid black;
 } [data-slide-5] > div:nth-child(3) > .picGallery {
 	min-height: 820px;
 } [data-slide-5] > div:nth-child(4) {

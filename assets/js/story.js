@@ -25,21 +25,17 @@ $('document').ready(function() {
 		var cubsSlideNo = 0;
 		var floodsSlideNo = 0;
 
+		// Timeline navigation events
 		$('#downTimeBtn').click(function(){
 			if(slideNo !== slides.length - 1) {
 				hideSlide();
 				deselectTimeStop();
 				slideNo++;
-				if(slideNo === 5 && fireworksPlayed === false) {
-					startFireworks();
-					fireworksPlayed = true;
-				};
 				showSlide();		
 				selectTimeStop();
 				checkSlideEnds();
 			}
 		});
-
 		$('#upTimeBtn').click(function(){
 			if(slideNo !== 0) {
 				hideSlide();
@@ -50,7 +46,16 @@ $('document').ready(function() {
 				checkSlideEnds();
 			}
 		});
+		$('.timeStop').click(function(){
+			hideSlide();
+			deselectTimeStop();
+			slideNo = $(this).attr('data-timeStop');
+			showSlide();
+			selectTimeStop();
+			checkSlideEnds();
+		});
 
+		// Slide & timeline management functions
 		function checkSlideEnds () {
 			if(slideNo === 0) {
 				disableDownPointer();
@@ -61,13 +66,16 @@ $('document').ready(function() {
 				disableDownPointer();
 				enableUpPointer();
 			} else {
+				if(slideNo === 5 && fireworksPlayed === false) {
+					startFireworks();
+					fireworksPlayed = true;
+				};
 				disableUpPointer();
 				disableDownPointer();
 				enableUpPointer();
 				enableDownPointer();
 			}
 		}
-
 		function disableUpPointer () {
 			$('.upPointer').removeClass('flashUpPointer');
 			$('.upScrollBtn').removeClass('flashBtn');
