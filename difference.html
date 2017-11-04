@@ -15,7 +15,7 @@
 				<h3 id="caption1">&nbsp</h3>
 				<h3 id="caption2">&nbsp</h3>
 			</div>
-			<div id="mainPane">
+			<div id="mainPane" class="hidden">
 				<div class="imgPane" id="leftPane">
 					<img id="originalImg" src="">
 				</div>
@@ -52,37 +52,41 @@
 
 			<div id="winModal" class="modal">
 				<!-- Modal content -->
-				<div class="modal-content">
+				<div class="modal-content smallModal-content">
 					<div class="modal-header">
 						<h2>Well done!</h2>
 						<h3>You found all of the differences in</h3>
 						<h3><span id="spanTime">blah</span></h3>
+						<p>Would you like to play again?</p>
 					</div>
 					<div class="modal-content-box">
-						<p>Would you like to play again?</p>
 						<button id="newGameBtn" class="modal-btn flashBtn">New Picture</button>
 						<a href="index.html"><button id="lastGameFooterBtn" class="modal-btn flashBtn">Main Menu</button></a>
 					</div>
 				</div>
 			</div>
 
-			<div id="newGameModal" class="modal bigModal">
+			<div id="newGameModal" class="modal">
 				<!-- Modal content -->
 				<div class="modal-content bigModal-content">
-					<div class="modal-header">
-						<h2>How to play:</h2>
+					<div class="bigModal-inner bigModal-left">
+						<h2>How to play</h2>
 						<br>
-						<h3>You will be shown two copies of the same picture - but the one on the right has been edited!</h3>
-						<h3>When you spot a difference between the two pictures, tap its location in the picture on the right.</h3>
-						<h3>Try to find all the differences as quickly as you can.</h3>
+						<ul>
+							<li><h3>First, pick a picture from the options on the right.</h3></li>
+							<li><h3>You will then be shown two copies of the same picture side by side, but they will not <em>quite</em> be the same... the one on the right has been edited!</h3></li>
+							<li><h3>When you spot a difference between the two pictures, tap its location in the <strong>right-hand</strong> picture.</h3></li>
+							<li><h3>The paw prints below the pictures will show you how many differences you have left to find.</h3></li>
+							<li><h3>Try to find all the differences as quickly as you can!</h3></li>
+						</ul>
 						<br>
-						<h2>Choose a picture to start!</h2>
+						<h2>Tap a picture to start!</h2>
 					</div>
-					<div class="modal-content-box bigModal-content-box">
-						<button id="crownedcrane" class="modal-btn bigModal-btn"><img src="assets/img/difference/CrownedCraneSm.jpg"><p>Grey Crowned Crane</p></button>
-						<button id="woodnymph" class="modal-btn bigModal-btn"><img src="assets/img/difference/WoodNymphSm.jpg"><p>Giant Wood Nymph</p></button>
-						<button id="cockroaches" class="modal-btn bigModal-btn"><img src="assets/img/difference/CockroachesSm.jpg"><p>Hissing Cockroaches</p></button>
-						<button id="frogs" class="modal-btn bigModal-btn"><img src="assets/img/difference/FrogsSm.jpg"><p>Tree Frogs</p></button>
+					<div class="bigModal-inner bigModal-right">
+						<button id="woodnymph" class="modal-btn bigModal-btn"><img src="assets/img/difference/WoodNymphSm.jpg"><span class="diff-indicator diff-medium">difficulty<span class="diff-number">2</span></span></button>
+						<button id="frogs" class="modal-btn bigModal-btn"><img src="assets/img/difference/FrogsSm.jpg"><span class="diff-indicator diff-easy">difficulty<span class="diff-number">1</span></span></button>
+						<button id="cockroaches" class="modal-btn bigModal-btn"><img src="assets/img/difference/CockroachesSm.jpg"><span class="diff-indicator diff-hard">difficulty<span class="diff-number">3</span></span></button>
+						<button id="crownedcrane" class="modal-btn bigModal-btn"><img src="assets/img/difference/CrownedCraneSm.jpg"><span class="diff-indicator diff-medium">difficulty<span class="diff-number">2</span></span></button>
 					</div>
 				</div>
 			</div>
