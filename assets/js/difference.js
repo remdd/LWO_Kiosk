@@ -12,7 +12,6 @@ $(document).ready(function(){
 	var difference = {}
 	difference.allImageSets = [];
 	difference.rightSvg = document.getElementById("rightSvg");
-	difference.diffs = 0;
 	difference.winModal = document.getElementById("winModal");
 	difference.newGameModal = document.getElementById("newGameModal");
 	difference.handle = "";
@@ -21,7 +20,8 @@ $(document).ready(function(){
 	difference.caption2 = document.getElementById("caption2");
 	difference.newGameBtn = document.getElementById("newGameBtn");
 	difference.timer = 0;
-	difference.numberOfDiffs = 0;
+	difference.diffs = 0;						//	Variable tracks number of differences found in current game
+	difference.numberOfDiffs = 0;				//	Number of differences to find in current game
 
 	//	Called on first start to perform initial setup & load images
 	difference.start = function() {
@@ -69,6 +69,7 @@ $(document).ready(function(){
 		difference.caption1.textContent = obj.caption1;
 		difference.caption2.textContent = obj.caption2;
 		difference.numberOfDiffs = obj.diff.length;
+		difference.diffs = obj.diff.length;
 		for(var i = 0; i < difference.numberOfDiffs; i++) {
 			var cx = obj.diff[i][0];
 			var cy = obj.diff[i][1];
@@ -83,10 +84,10 @@ $(document).ready(function(){
 			diff.setAttribute("ry", ry);
 			diff.addEventListener("click", function(obj) {
 				this.classList.remove("hidden");
+				difference.diffs--;
 				var pawIcon = document.getElementById("paw" + difference.diffs);
 				pawIcon.classList.add("foundCluePaw");
-				difference.diffs++;
-				if(difference.diffs >= difference.numberOfDiffs) {
+				if(difference.diffs === 0) {
 					difference.win(obj);
 				}
 				this.removeEventListener("click", arguments.callee);
@@ -101,14 +102,8 @@ $(document).ready(function(){
 
 	difference.clearDown = function(obj) {
 		difference.timer = 0;
-		for(var i = 0; i < difference.numberOfDiffs; i++) {
-			var diff = document.getElementById("diff" + i);
-			diff.classList.add("hidden");
-	//		diff.removeEventListener("click", function() {});
-			var pawIcon = document.getElementById("paw" + i);
-			pawIcon.classList.remove("foundCluePaw");
-		}
 		difference.diffs = 0;
+		$('.diffEllipse').addClass('hidden');
 		$('#mainPane').addClass('hidden');
 	}
 
@@ -140,14 +135,14 @@ $(document).ready(function(){
 		difference.woodnymph.diff = [];
 		difference.woodnymph.diff[0] = [555, 70, 60, 60];		//	Red box
 		difference.woodnymph.diff[1] = [65, 150, 50, 35];		//	Leaf overlapping wing
-		difference.woodnymph.diff[2] = [285, 210, 65, 70];		//	3x black stripes
+		difference.woodnymph.diff[2] = [332, 480, 70, 25];		//	Lower central wing pattern removed
 		difference.woodnymph.diff[3] = [150, 308, 60, 32];		//	Wing pattern
 		difference.woodnymph.diff[4] = [625, 436, 80, 38];		//	Antennae
 		difference.woodnymph.diff[5] = [290, 645, 40, 40];		//	3x white spots
 		difference.woodnymph.diff[6] = [465, 668, 50, 42];		//	Yellow flower
 		difference.woodnymph.diff[7] = [595, 310, 45, 45];		//	Left wing tip
-		difference.woodnymph.caption1 = "Giant Wood Nymph in the butterfly hall at the Oasis.";
-		difference.woodnymph.caption2 = "Giant Wood Nymphs, also known as Paper Kites, can be found across Southeast Asia, Northern Australia and Taiwan.";
+		difference.woodnymph.caption1 = "Giant wood nymph in the butterfly hall at the Oasis.";
+		difference.woodnymph.caption2 = "Giant wood nymphs, also known as Paper Kites, can be found across Southeast Asia, Northern Australia and Taiwan.";
 
 	difference.frogs = new difference.imageSet("Frogs");
 		difference.frogs.diff = [];
@@ -159,8 +154,8 @@ $(document).ready(function(){
 		difference.frogs.diff[5] = [355, 368, 30, 30];			// Middle frog has small, circular pupil
 		difference.frogs.diff[6] = [510, 432, 30, 40];			// Right frog has extra toe
 		difference.frogs.diff[7] = [160, 505, 50, 35];			// Left frog toes shrunk / removed
-		difference.frogs.caption1 = "Tree frogs.";
-		difference.frogs.caption2 = "Ribbit";
+		difference.frogs.caption1 = "A trio of South American tree frogs at the Wildlife Oasis.";
+		difference.frogs.caption2 = "There are over 800 known species of tree frog, found across the world - in every continent except Antarctica!";
 
 	difference.crownedcrane = new difference.imageSet("CrownedCrane");
 		difference.crownedcrane.diff = [];
@@ -172,7 +167,7 @@ $(document).ready(function(){
 		difference.crownedcrane.diff[5] = [710, 523, 38, 34];	//	Longer black wingtips
 		difference.crownedcrane.diff[6] = [600, 413, 75, 39];	//	Orange tail feathers now yellow
 		difference.crownedcrane.diff[7] = [75, 347, 45, 30];	//	Longer beak
-		difference.crownedcrane.caption1 = "Grey Crowned Cranes are found in Eastern Africa and are listed as endangered by the IUCN.";
+		difference.crownedcrane.caption1 = "Grey crowned cranes are found in Eastern Africa and are listed as endangered by the IUCN.";
 		difference.crownedcrane.caption2 = "These striking animals are the national bird of Uganda - one is even featured on the country's flag!";
 
 	difference.cockroaches = new difference.imageSet("Cockroaches");
@@ -181,14 +176,14 @@ $(document).ready(function(){
 		difference.cockroaches.diff[1] = [540, 135, 26, 35];
 		difference.cockroaches.diff[2] = [210, 170, 30, 60];
 		difference.cockroaches.diff[3] = [560, 344, 55, 23];
-		difference.cockroaches.diff[5] = [110, 455, 22, 39];
+		difference.cockroaches.diff[5] = [90, 460, 45, 39];
 		difference.cockroaches.diff[6] = [415, 490, 45, 70];
 		difference.cockroaches.diff[4] = [415, 622, 38, 32];
 		difference.cockroaches.diff[7] = [328, 720, 65, 35];
 		difference.cockroaches.diff[8] = [65, 640, 55, 68];
 		difference.cockroaches.diff[9] = [647, 635, 50, 28];
-		difference.cockroaches.caption1 = "Hissing Cockroaches.";
-		difference.cockroaches.caption2 = "They hiss!";
+		difference.cockroaches.caption1 = "Madagascar hissing cockroaches. Both males and females will hiss when disturbed or threatened.";
+		difference.cockroaches.caption2 = "Males will also hiss to attract females, or to establish dominance over other males.";
 
 	difference.start();
 

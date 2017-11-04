@@ -94,7 +94,7 @@ ellipse {
 	transition: opacity 0.5s;
 }
 .hidden {
-	opacity: 0;	/* increase to see all touchpoints */
+	opacity: 0.0;	/* increase to see all touchpoints */
 }
 
 .modal {
