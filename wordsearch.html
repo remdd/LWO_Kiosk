@@ -251,7 +251,7 @@
 					</div>
 				</div>
 				<div id="hintDiv">
-					<button id="hintButton">
+					<button id="hintBtn">
 						<h2><img id="hintBulb" src="assets/img/wordsearch/pawbulb.png" class="shadowed"> ...not sure who you're looking for?  Tap <span id="hint">here</span> for some help!</h2>
 					</button>
 				</div>
@@ -266,7 +266,7 @@
 			<!-- Modal content -->
 			<div class="modal-content">
 				<div class="modal-header">
-					<h2>Who's hiding in this WordSearch?</h2>
+					<h2>Who's hiding in this wordsearch?</h2>
 				</div>
 				<div class="modal-content-box">
 					<div class="modal-body-left">
@@ -292,6 +292,31 @@
 				</div>
 				<div class="modal-footer">
 					<h2>Tap anywhere to close...</h2>
+				</div>
+			</div>
+		</div>
+
+		<div id="startPopup" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content bigModal-content">
+				<div class="modal-header">
+					<h2>How to play</h2>
+				</div>
+				<div class="modal-content-box bigModal-content-box">
+					<p>The names of twelve of the Wildlife Oasis' inhabitants are hidden in each wordsearch.</p>
+					<p>Silhouettes of the hidden animals are shown on either side of the grid. See how many you can recognize just from these clues!</p>
+					<p>Be warned though - some of the inhabitants are <strong>very</strong> hard to name just from their silhouettes. If you get stuck, tap the hint button at the bottom of the screen to see the names that are still hidden.</p>
+					<img class="modalImg" src="assets/img/wordsearch/WordsearchDirections.png">
+					<p>Names can read from top to bottom, from left to right or diagonally from left to right and either up or down.</p>
+					<p>When you find a hidden name, you can select it by:</p>
+					<ul>
+						<li>tapping the first letter, then the last letter of the name</li>
+						<li>...or by dragging your finger from first to last letter.</li>
+					</ul>
+					<p>If you are right, a ring will be drawn around the word and the animal's silhouette will be replaced by a colour picture.</p>
+				</div>
+				<div class="modal-footer">
+					<div id="startBtn" class="modal-btn">Start!</div>
 				</div>
 			</div>
 		</div>

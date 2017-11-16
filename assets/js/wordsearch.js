@@ -29,9 +29,11 @@ $(document).ready(function() {
 	var gameNumber = 0;			// grid number to be played
 	var numberOfGames = 7;		// need to manually increment when new grids are added, counts from zero
 	var gameArray = [];			// holds an array of numbers from 0 to numberOfGames - this is shuffled on first load & used to load games by number 
+	var startModal = document.getElementById("startPopup");
 	var hintModal = document.getElementById("hintPopup");
 	var winModal = document.getElementById("winPopup");
-	var hintBtn = document.getElementById("hintButton");
+	var startBtn = document.getElementById("startBtn");
+	var hintBtn = document.getElementById("hintBtn");
 	var divAll = document.getElementById("divAll");
 	var newGameBtn = document.getElementById("newGameBtn");
 
@@ -62,7 +64,8 @@ $(document).ready(function() {
 		}
 		shuffle(gameArray);
 		console.log(gameArray);
-		newGame();
+		startModal.style.display = "block";
+		startBtn.addEventListener("click", newGame);
 	}
 
 	//	Shuffle array to random order
@@ -82,6 +85,7 @@ $(document).ready(function() {
 	}
 
 	function newGame() {
+		startModal.style.display = "none";
 		winModal.style.display = "none";
 		animalObjects = 0;
 		animalsFound = 0;
@@ -282,7 +286,6 @@ $(document).ready(function() {
 			imageObj.src = "assets/img/wordsearch/" + this.name + "-colour.png";
 			var x = this.imgX;
 			var y = this.imgY;
-			fadeIn();
 			function fadeIn() {
 				if(alpha >= 1) {
 					return;
@@ -292,6 +295,7 @@ $(document).ready(function() {
 				ctx.drawImage(imageObj, x, y);
 				alpha += 0.03;
 			};
+			fadeIn();
 		};
 	};
 
@@ -485,7 +489,7 @@ $(document).ready(function() {
 		ctx.quadraticCurveTo(x2 * sqHt + sqHt-ofSt, y2 * sqHt+ofSt, x2 * sqHt + sqHt/2, y2 * sqHt+ofSt);
 		ctx.lineTo(x1 * sqHt + sqHt/2, y1 * sqHt+ofSt);
 		ctx.quadraticCurveTo(x1 * sqHt+ofSt, y1 * sqHt+ofSt, x1 * sqHt+ofSt, y1 * sqHt + sqHt/2);
-		ctx.strokeStyle = 'rgba(0,0,0,0.5)';
+		ctx.strokeStyle = 'rgba(0,0,0,0.3)';
 		ctx.lineWidth = 3;
 		ctx.stroke();
 	};
@@ -499,7 +503,7 @@ $(document).ready(function() {
 		ctx.quadraticCurveTo(x2 * sqHt + sqHt-ofSt, y2 * sqHt + sqHt-ofSt, x2 * sqHt + sqHt-ofSt, y2 * sqHt + sqHt/2);
 		ctx.lineTo(x1 * sqHt + sqHt-ofSt, y1 * sqHt + sqHt/2);
 		ctx.quadraticCurveTo(x1 * sqHt + sqHt-ofSt, y1 * sqHt+ofSt, x1 * sqHt + sqHt/2, y1 * sqHt+ofSt);
-		ctx.strokeStyle = 'rgba(0,0,0,0.5)';
+		ctx.strokeStyle = 'rgba(0,0,0,0.3)';
 		ctx.lineWidth = 3;
 		ctx.stroke();
 	};
@@ -513,7 +517,7 @@ $(document).ready(function() {
 		ctx.quadraticCurveTo(x2 * sqHt + sqHt/2, y2 * sqHt + sqHt, x2 * sqHt + sqHt*0.795, y2 * sqHt + sqHt*0.795);
 		ctx.quadraticCurveTo(x2 * sqHt + sqHt, y2 * sqHt + sqHt/2, x2 * sqHt + sqHt*0.795, y2 * sqHt + sqHt*0.265);
 		ctx.lineTo(x1 * sqHt + sqHt*0.795, y1 * sqHt + sqHt*0.265);
-		ctx.strokeStyle = 'rgba(0,0,0,0.5)';
+		ctx.strokeStyle = 'rgba(0,0,0,0.3)';
 		ctx.lineWidth = 3;
 		ctx.stroke();
 	};
@@ -527,7 +531,7 @@ $(document).ready(function() {
 		ctx.quadraticCurveTo(x2 * sqHt + sqHt, y2 * sqHt + sqHt/2, x2 * sqHt + sqHt*0.795, y2 * sqHt + sqHt*0.265);
 		ctx.quadraticCurveTo(x2 * sqHt + sqHt/2, y2 * sqHt + 00, x2 * sqHt + sqHt*0.265, y2 * sqHt + sqHt*0.265);
 		ctx.lineTo(x1 * sqHt + sqHt*0.265, y1 * sqHt + sqHt*0.265);
-		ctx.strokeStyle = 'rgba(0,0,0,0.5)';
+		ctx.strokeStyle = 'rgba(0,0,0,0.3)';
 		ctx.lineWidth = 3;
 		ctx.stroke();
 	};

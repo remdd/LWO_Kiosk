@@ -157,8 +157,8 @@ $(document).ready(function(){
 		whoAmI.handle = setInterval(function() {
 			timerReduce();
 			timeCheck();
-			whoAmI.timeLeft -= 10;
-		}, 1200);
+			whoAmI.timeLeft -= 1;
+		}, 120);
 	};
 	function timerReduce() {
 		var timerHeight = (whoAmI.timeLeft * 1.4) + "px";

@@ -38,6 +38,8 @@ $(document).ready(function(){
 	  return array;
 	}
 
-	$('body').fadeIn('slow');
+	$('.rightDiv').imagesLoaded(function() {
+		$('body').fadeIn('slow');
+	});
 
 });
