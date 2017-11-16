@@ -26,6 +26,8 @@
 	margin-bottom: 80px;
 	font-size: 1.5rem;
 	padding: 30px;
+} .capsuleBtn:first-of-type {
+	margin-top: 86px;
 } .capsuleBtnImg {
 	position: absolute;
 	left: -70px;

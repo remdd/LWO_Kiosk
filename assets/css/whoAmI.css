@@ -320,7 +320,7 @@ h1 {
     padding: 0;
     border: 1px solid #888;
     width: 100%;
-    width: 420px;
+    width: 500px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1),0 6px 20px 0 rgba(0,0,0,0.09);
     -webkit-animation-name: animateleft;
     -webkit-animation-duration: 0.8s;
@@ -365,6 +365,10 @@ h1 {
   height: 180px;
   background: white;
   text-align: center;
+} #firstLoadModalContent {
+  height: 420px;
+  width: 420px;
+  padding: 40px;
 }
 @-webkit-keyframes animateleft {
     from {left:-100px; opacity:0} 
@@ -394,7 +398,7 @@ h1 {
 .modal-content-box {
   padding: 10px;
   float: left;
-  width: 400px;
+  width: 480px;
   height: 140px;
   background: white;
   text-align: center;

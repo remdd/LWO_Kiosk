@@ -2,8 +2,7 @@ $(document).ready(function(){
 
 	$('body').fadeIn('slow');
 
-	// whoAmI namespace declaration & variables
-	var whoAmI = {}
+	var whoAmI = {}				// whoAmI namespace declaration & variables
 
 	whoAmI.allAnimals = [];		// array to hold available animal objects
 	whoAmI.game = 0;			// number of game to load
@@ -15,8 +14,8 @@ $(document).ready(function(){
 	whoAmI.totalScore = 0;		// total score for current round
 	whoAmI.handle = "";			// timer handler
 	whoAmI.rightChoice = 0;		// idenitifes correct button
-	whoAmI.imgClue1 = 0;		// identifies clue no to reveal first clue image
-	whoAmI.imgClue2 = 0;		// identifies clue no to reveal second clue image
+	whoAmI.imgClue1 = 0;		// identifies no of clue on which first clue image is revealed
+	whoAmI.imgClue2 = 0;		// identifies no of clue on which second clue image is revealed
 	whoAmI.startBtn = document.querySelector("#startBtn");
 	whoAmI.choiceBtns = document.querySelectorAll(".choiceBtn");
 	whoAmI.photo = document.querySelector("#mainPhoto");
@@ -25,6 +24,8 @@ $(document).ready(function(){
 	whoAmI.clueImg2 = document.querySelector("#clueImg2");
 	whoAmI.clueImgDiv1 = document.querySelector("#clueImgDiv1");
 	whoAmI.clueImgDiv2 = document.querySelector("#clueImgDiv2");
+	whoAmI.firstLoadModal = document.getElementById("firstLoadModal");
+	whoAmI.firstStartBtn = document.getElementById("firstStartBtn");	
 	whoAmI.winRoundModal = document.getElementById("winRoundModal");
 	whoAmI.endRoundModal = document.getElementById("endRoundModal");
 	whoAmI.spanScore = document.getElementById("spanScore");
@@ -59,7 +60,13 @@ $(document).ready(function(){
 		window.location = newLocation;
 	}
 
+	function firstLoad() {
+		whoAmI.firstLoadModal.style.display = "block";
+		whoAmI.firstStartBtn.addEventListener("click", newRound);
+	}
+
 	function newRound() {
+		whoAmI.firstLoadModal.style.display = "none";
 		whoAmI.endRoundModal.style.display = "none";
 		whoAmI.outOfTimeModal.style.display = "none";
 		if(whoAmI.allAnimals.length < whoAmI.roundsToPlay) {
@@ -130,13 +137,19 @@ $(document).ready(function(){
 			whoAmI.choiceBtns[i].disabled = false;
 		}
 		whoAmI.game = Math.floor(Math.random() * whoAmI.allAnimals.length);
-		console.log(whoAmI.allAnimals[whoAmI.game].name);
-		console.log(whoAmI.game);
-		whoAmI.animalNameSpan.textContent = whoAmI.allAnimals[whoAmI.game].name;
-		whoAmI.animalNameSpanTimeout.textContent = whoAmI.allAnimals[whoAmI.game].name;
+		//	Handle 'a' vs 'an' when displaying animal name
+		switch(whoAmI.allAnimals[whoAmI.game].name.slice(0, 1)) {
+			case "A": case "E": case "I": case "O": case "U":
+				whoAmI.animalNameSpan.textContent = "n " + whoAmI.allAnimals[whoAmI.game].name;
+				whoAmI.animalNameSpanTimeout.textContent = "n " + whoAmI.allAnimals[whoAmI.game].name;
+				break;
+			default:
+				whoAmI.animalNameSpan.textContent = " " + whoAmI.allAnimals[whoAmI.game].name;
+				whoAmI.animalNameSpanTimeout.textContent = " " + whoAmI.allAnimals[whoAmI.game].name;
+				break;
+		}
 		loadAnimal(whoAmI.allAnimals[whoAmI.game]);
-		console.log("Timer started...");
-		whoAmI.timeLeft = 600;
+		whoAmI.timeLeft = 600;										//	Start timer in 10ths of seconds
 		var timerHeight = (whoAmI.timeLeft * 1.4) + "px";
 		whoAmI.timeBar.style.height = timerHeight;	
 		whoAmI.timeBar.classList.remove("fadedTimer");
@@ -144,8 +157,8 @@ $(document).ready(function(){
 		whoAmI.handle = setInterval(function() {
 			timerReduce();
 			timeCheck();
-			whoAmI.timeLeft -= 1;
-		}, 120);
+			whoAmI.timeLeft -= 10;
+		}, 1200);
 	};
 	function timerReduce() {
 		var timerHeight = (whoAmI.timeLeft * 1.4) + "px";
@@ -328,9 +341,7 @@ $(document).ready(function(){
 			allAnimals.push(this);
 		};
 
-
 		// Animal declarations -> easiest clues last
-
 		var platypus = new Animal("platypus", "Platypus");
 			platypus.wrong = ["Brushtail Possum", "Pine Marten", "Manatee", "Honey Badger", "Beaver", "Koala", "Wombat", "Spiny Anteater", "Pangolin", "Echidna"];
 			platypus.clues = [
@@ -550,7 +561,7 @@ $(document).ready(function(){
 		return allAnimals;
 	};
 
-	newRound();
+	firstLoad();
 
 });
 

@@ -114,7 +114,7 @@ ellipse {
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 .modal-content {
-	border: 6px solid #89bf7e;
+	border: 6px solid #104a03;
     position: relative;
 	background: #bcfcae;
     margin: auto;
@@ -225,7 +225,7 @@ button {
 }
 .diff-easy {
 	background: #bcfcae;
-	border: 6px solid #89bf7e;
+	border: 6px solid #104a03;
 }
 .diff-medium {
 	background: #ffda6b;
