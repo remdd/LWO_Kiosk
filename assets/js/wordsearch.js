@@ -21,6 +21,8 @@ $(function() {
 	function newGame() {
 		clearSelection();											//	Clear any letter highlights & firstSelected flag
 		addRandomLetters();											//	Fill random letters around placed names
+		console.log(gamesToPlay.length + " games left");
+		console.log("Loading game: " + gamesToPlay[0]);
 		if(gamesToPlay.length < 1) {								//	If no games remain in playing array,
 			populatePlayingArray();
 		}
@@ -295,6 +297,7 @@ $(function() {
 		}
 		if(gamesToPlay[0].length === 0) {							//	Check if all animals have been found
 			setTimeout(function() {
+				$('#hintPopup').fadeOut('fast');					//	Fade out hint popup if displayed
 				$('#winPopup').fadeIn('slow');						//	If so, display 'win modal'...
 			}, 1500);												//	...after a 1.5 second delay
 		}
@@ -477,7 +480,7 @@ $(function() {
 			{ id: 'waterdragon', name: 'Water Dragon', start_x: 2, start_y: 12, direction: 'diagonalUp', side: 'right', img_x: 5, img_y: 40 },
 			{ id: 'owlbutterfly', name: 'Owl Butterfly', start_x: 1, start_y: 2, direction: 'diagonalDown', side: 'right', img_x: 245, img_y: 190 },
 			{ id: 'tokaygecko', name: 'Tokay Gecko', start_x: 1, start_y: 1, direction: 'vertical', side: 'right', img_x: 25, img_y: 220 },
-			{ id: 'mara', name: 'Mara', start_x: 9, start_y: 1, direction: 'right', side: 'right', img_x: 150, img_y: 460 },
+			{ id: 'mara', name: 'Mara', start_x: 9, start_y: 1, direction: 'vertical', side: 'right', img_x: 150, img_y: 460 },
 			{ id: 'potoroo', name: 'Potoroo', start_x: 0, start_y: 13, direction: 'horizontal', side: 'right', img_x: 10, img_y: 650 },
 			{ id: 'monal', name: 'Monal', start_x: 5, start_y: 0, direction: 'vertical', side: 'right', img_x: 170, img_y: 670 },
 		],
