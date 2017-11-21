@@ -137,31 +137,40 @@ $(function() {
 		}
 	});
 	$('#gridDiv').on('mousemove', function(evt) {
-		if(firstLetterSelected) {
+		if($('.chosen').length > 0) {					//	If a guessed word is already highlighted, stop flashing animations
 			stopHover();
+		} else if(firstLetterSelected) {				//	Else if a first letter has been selected...
 			evt.preventDefault();
 			evt.stopPropagation();
-			var moveTouch = evt.changedTouches[0];
-			var $touchedElement = $(document.elementFromPoint(moveTouch.clientX, moveTouch.clientY));
+			var $touchedElement = $(evt.target);
 			if($touchedElement.hasClass('square') && !$touchedElement.hasClass('first')) {
-				secondHover($touchedElement);
+				secondHover($touchedElement);			//	...run 'secondHover' to determine whether a straight line exists from 1st to 2nd letter, and highlight it if so
 			}
+		}
+	});
+	$('#gridDiv').on('mouseup', function(evt) {
+		stopHover();
+		evt.preventDefault();
+		evt.stopPropagation();
+		var $touchedElement = $(evt.target);
+		if($touchedElement.hasClass('square') && !$touchedElement.hasClass('first')) {
+			secondClick($touchedElement);
 		}
 	});
 
 	//	Hover listeners
 	$('.square').mouseover(function() {
-		if(firstLetterSelected) {
-			secondHover($(this));
+		if(firstLetterSelected) {								//	If first letter has been selected,
+			secondHover($(this));								//	Run 'secondHover' to determine whether a straight line exists between it and hovered square
 		} else {
-			$(this).addClass('hovered');
+			$(this).addClass('hovered');						//	Otherwise highlight hovered square only
 		}
 	});
 	$('.square').mouseleave(function() {
-		$('.square').removeClass('hovered');
+		$(this).removeClass('hovered');							//	Remove hover highlight when mouse leaves a square
 	});
 
-	function buildGuessString(obj, guess) {
+	function buildGuessString(obj, guess) {						//	Build a 'guess' string from selected squares
 		guess += obj.text();
 		obj.addClass('chosen');
 		return guess;
@@ -175,7 +184,7 @@ $(function() {
 		rowFirst = Number(obj.attr('data-row'));
 	};
 	function secondClick(obj) {
-		stopHover();
+		console.log("Second");
 		colSecond = Number(obj.attr('data-col'));
 		rowSecond = Number(obj.attr('data-row'));
 		//	Build 'guess' string of characters between first and second selections
@@ -210,9 +219,8 @@ $(function() {
 				guess = buildGuessString($(grid[i]), guess);
 			}
 		}
-		checkGuess(guess);
-		setTimeout(clearSelection, 700);
-		// setTimeout(checkIfWon, 1500);
+		checkGuess(guess);											//	Check whether selected word is a valid guess
+		setTimeout(clearSelection, 700);							//	Clear highlighting after 0.7 seconds
 	};
 
 	//	Hover around currently selected string when touch is dragged across grid
@@ -227,41 +235,41 @@ $(function() {
 		if(firstRow === rowHover) {									//	Add highlights to span between selections if line is horizontal...
 			if(firstCol < colHover) {
 				for(var i = (firstCol + (firstRow * cols)); i <= (colHover + (rowHover * cols)); i++) {
-					grid[i].classList.add("hovered");
+					$(grid[i]).addClass('hovered');
 				}
 			} else if(firstCol > colHover) {
 				for(var i = (firstCol + (firstRow * cols)); i >= (colHover + (rowHover * cols)); i--) {
-					grid[i].classList.add("hovered");
+					$(grid[i]).addClass('hovered');
 				}
 			}
 		} else if(firstCol === colHover) {							//	...or vertical...
 			if(firstRow < rowHover) {
 				for(var i = (firstCol + (firstRow * cols)); i <= (colHover + (rowHover * cols)); i += cols) {
-					grid[i].classList.add("hovered");
+					$(grid[i]).addClass('hovered');
 				}
 			} else if(firstRow > rowHover) {
 				for(var i = (firstCol + (firstRow * cols)); i >= (colHover + (rowHover * cols)); i -= cols) {
-					grid[i].classList.add("hovered");
+					$(grid[i]).addClass('hovered');
 				}
 			}
 		} else if(colHover - firstCol === rowHover - firstRow) {	//	...or diagonal down...
 			if(firstRow < rowHover) {
 				for(var i = (firstCol + (firstRow * cols)); i <= (colHover + (rowHover * cols)); i += (cols + 1)) {
-					grid[i].classList.add("hovered");
+					$(grid[i]).addClass('hovered');
 				}
 			} else if(firstRow > rowHover) {
 				for(var i = (firstCol + (firstRow * cols)); i >= (colHover + (rowHover * cols)); i -= (cols + 1)) {
-					grid[i].classList.add("hovered");
+					$(grid[i]).addClass('hovered');
 				}
 			}
 		} else if(colHover - firstCol === firstRow - rowHover) {	//	...or diagonal up
 			if(firstRow > rowHover) {
 				for(var i = (firstCol + (firstRow * cols)); i >= (colHover + (rowHover * cols)); i -= (cols - 1)) {
-					grid[i].classList.add("hovered");
+					$(grid[i]).addClass('hovered');
 				}
 			} else if(firstRow < rowHover) {
 				for(var i = (firstCol + (firstRow * cols)); i <= (colHover + (rowHover * cols)); i += (cols - 1)) {
-					grid[i].classList.add("hovered");
+					$(grid[i]).addClass('hovered');
 				}
 			}
 		}
@@ -269,15 +277,16 @@ $(function() {
 
 	//	Clear highlighted letters after guess selection
 	function clearSelection() {
-		$('.square').removeClass('chosen first');
-		stopHover();
-		firstLetterSelected = false;
+		$('.square').removeClass('chosen first');				//	Remove selection highlighting
+		stopHover();											//	And any flashing animation
+		firstLetterSelected = false;							//	Reset flag to enable new guess to start
 	};
-	function stopHover() {
-		$('.square').removeClass('hovered');	
+	function stopHover() {										//	Remove flashing animation from any 'hovered' squares
+		$('.hovered').removeClass('hovered');
 	}
 
 	function checkGuess(guess) {								//	Check whether 'guess' string matches an animal ID still present in gamesToPlay[0]
+		stopHover();											//	Remove hover class (flashing squares)
 		guess = guess.toLowerCase();							//	Case conversion (letters displayed in grid are uppercase)
 		revGuess = reverseGuess(guess);							//	Reverse the guess string in case selection was made 'front to back'
 		for(var i = 0; i < gamesToPlay[0].length; i++) {		//	Iterate through animal ID's remaining in gamesToPlay[0]
